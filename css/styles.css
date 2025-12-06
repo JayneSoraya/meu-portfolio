@@ -11,6 +11,7 @@ body {
   font-family: 'Source Code Pro', monospace;
   height: 100vh;
   font-size: 12px;
+  color: #FFFFFF;
 }
 
 /* se a tela tiver pelo menos 400px vai carregar estes estilos */
@@ -21,7 +22,7 @@ body {
 }
 
 /* breakpoint */
-@media (min-width: 600px) {
+@media (min-width: 768px) {
   body {
     background-attachment: fixed;
     background-size: cover;
@@ -32,8 +33,12 @@ body {
 /* breakpoint */
 @media (min-width: 1200px) {
   body {
-   
     font-size: 20px;
+  }
+  .sobre h2,
+  .portifolio h2,
+  .contato h2{
+    padding: 2rem;
   }
 }
 
@@ -250,6 +255,7 @@ a:hover {
 
 .btn-link{
   font-size: 0.8rem;
+  text-align: center;
   
 }
 
@@ -265,11 +271,17 @@ a:hover {
   border-radius: 10px;
 }
 
-.contato .icons{
+.contato .icons {
     display: flex;
     justify-content:  center;
     gap: 3rem;
     margin-top: 3rem;
+    
+}
+
+
+a:hover {
+  text-decoration: none;
 }
 
 .contato .icons a {
@@ -281,6 +293,7 @@ a:hover {
 .contato .icons a:hover{
     color: #FFFFFF;
     transform: scale(1.2);
+    text-decoration: none;
 }
 
 @media (max-width: 600px) {
