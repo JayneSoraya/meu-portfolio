@@ -28,11 +28,14 @@
 # Funcionalidades e Demonstração da Aplicação
 
 # Acesso ao Projeto
-
+Selecione o link e [veja meu portfólio aqui](https://jaynesoraya.github.io/meu-portfolio/)
 # Tecnologias utilizadas
 
 # Pessoas Desenvolvedoras do Projeto
 
 # Licença
+
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+
 
 # Conclusão
