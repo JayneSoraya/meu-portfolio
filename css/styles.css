@@ -31,15 +31,30 @@ body {
 }
 
 /* breakpoint */
-@media (min-width: 1200px) {
+@media (min-width: 650px) {
   body {
     font-size: 20px;
   }
   .sobre h2,
   .portifolio h2,
   .contato h2{
-    padding: 2rem;
+    padding: 4rem;
   }
+  
+}
+
+@media (min-width: 920px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+  }
+  .sobre h2,
+  .portifolio h2,
+  .contato h2{
+    padding: 4rem;
+  }
+
 }
 
 header {
@@ -123,21 +138,19 @@ a:hover {
 
 .sobre,
 .contato,
+.servicos,
 .portifolio {
   padding: 3rem;
-  min-height: 100vh;
 }
 
-@media (min-width: 1200px) {
-  .container {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1200px;
-  }
+.sobre{
+  padding: 3rem;
+  overflow: hidden;
 }
 
 .sobre h2,
 .contato h2,
+.servicos h2,
 .portifolio h2 {
   font-family: 'Press Start 2P', cursive;
   color: #FFFFFF;
@@ -197,7 +210,6 @@ a:hover {
     grid-template-columns: repeat(3, 260px);
     align-content: center;
     justify-content: center;
-    height: calc(100vh - 8em - 48px);
   }
 }
 
@@ -271,15 +283,80 @@ a:hover {
   border-radius: 10px;
 }
 
+.servicos{
+  display: center;
+  align-items: center;
+  gap: 1.5rem;
+  justify-content: center;
+  
+}
+
+.servicos-info, .from-container{
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.servicos-info h3, .from-container h3{
+  padding: 1rem;
+  font-family: 'Press Start 2p', cursive;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #FFFFFF;
+  line-height: 1.5;
+}
+
+.servicos-info ul{
+  list-style: none;
+}
+
+.servicos-info li{
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea{
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-family:'Source Code Pro', monospace;
+}
+
+.btn-enviar{
+  background-color: #FFFFFF;
+  color: #002B5B;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight:  bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.3s;
+}
+
 .contato .icons {
     display: flex;
     justify-content:  center;
     gap: 3rem;
     margin-top: 3rem;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    width: 100%;
     
 }
 
-
+.btn-enviar:hover{
+  transform: scale(1.05);
+  background-color: #FFFFFF;
+}
+*/
 a:hover {
   text-decoration: none;
 }
