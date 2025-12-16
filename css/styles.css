@@ -65,16 +65,31 @@ header {
 }
 
 .menu{
-    background-color: #002B5B;
+    background-color: #0A2A59;
     position:  fixed;
     width: 100vw;
     top: 0;
     z-index: 1;
+    display: flex;
+    justify-content:  space-between;
+    align-items: center;
+    padding: 10px 20px;
+    
+    
 }
 
+.logo-empresa{
+  width: 60px;
+  height: 6ss0px;
+}
 .menu ul{
     display: flex;
-    justify-content: space-around;
+    gap: 15px;
+    
+}
+
+.menu ul.container{
+  width: auto;
 }
 
 .menu li {
@@ -99,7 +114,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .titulo {
@@ -141,10 +156,6 @@ a:hover {
 .servicos,
 .portifolio {
   padding: 3rem;
-}
-
-.sobre{
-  padding: 3rem;
   overflow: hidden;
 }
 
@@ -152,6 +163,7 @@ a:hover {
 .contato h2,
 .servicos h2,
 .portifolio h2 {
+  padding: 6rem;
   font-family: 'Press Start 2P', cursive;
   color: #FFFFFF;
   margin-bottom: 1.5rem;
@@ -290,7 +302,15 @@ a:hover {
   justify-content: center;
   
 }
+.input-group-menu{
+  align-items: center;
+  display: flex;
+  margin-block-end: -10px;
+  margin-block-start: -10px;
+  margin-left: -40px;
+  padding: 10px;
 
+}
 .servicos-info, .from-container{
   flex: 1;
   min-width: 300px;
@@ -312,7 +332,7 @@ a:hover {
 
 .servicos-info li{
   font-size: 1.1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -386,7 +406,7 @@ a:hover {
 }
 
 .rodape{
+  background-color: #F9F9F9;
   display: grid;
-  justify-items: center;
-  color: #FFFFFF;
+  color: #929292;
 }
