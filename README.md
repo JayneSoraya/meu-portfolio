@@ -1,41 +1,36 @@
-<h4 align = "center">
-    :construction: Portifólio em construção :construction:
-</h4>
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-# Portifólio
+## Getting Started
 
-* [Título e Imagem de capa](#Título-e-Imagem-de-capa)
-* [Badges](#badges)
-* [índice](https://github.com/JayneSoraya/meu-portifolio/blob/main/README.md#%C3%ADndice)
-* [Descrição do Projeto](#descrição-do-projeto)
-* [Status do Projeto](#status-do-Projeto)
-* [Funcionalidades e Demonstração da Aplicação](#funcionalidades-e-demonstração-da-aplicação)
-* [Acesso ao Projeto](#acesso-ao-projeto)
-* [Tecnologias utilizadas](#tecnologias-utilizadas)
-* [Pessoas Contribuidoras](#pessoas-contribuidoras)
-* [Pessoas Desenvolvedoras do Projeto](#pessoas-desenvolvedoras)
-* [Licença](#licença)
-* [Conclusão](#conclusão)
+First, run the development server:
 
-# Título e Imagem de capa
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-# Badges
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-# Índice 
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-# Descrição do Projeto
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-# Funcionalidades e Demonstração da Aplicação
+## Learn More
 
-# Acesso ao Projeto
-Selecione o link e [veja meu portfólio aqui](https://jaynesoraya.github.io/meu-portfolio/)
-# Tecnologias utilizadas
+To learn more about Next.js, take a look at the following resources:
 
-# Pessoas Desenvolvedoras do Projeto
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-# Licença
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+## Deploy on Vercel
 
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-# Conclusão
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
