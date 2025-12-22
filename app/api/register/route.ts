@@ -16,7 +16,8 @@ export async function POST(request: Request) {
     `;
 
     return NextResponse.json({ message: "Usuário criado com sucesso!" }, { status: 201 });
-  } catch (error: any) {
-    return NextResponse.json({ error: "Erro ao cadastrar: " + error.message }, { status: 500 });
+  } catch (error: unknown) {
+    const errorMessage = error instanceof Error ? error.message :  "Erro desconhecido";
+    return NextResponse.json({ error: "Erro ao cadastrar: " + errorMessage }, { status: 500 });
   }
 }

@@ -1,4 +1,4 @@
-"use client"; // Necessário para usar interações (clicks, modal)
+"use client"; 
 
 import { useState } from "react";
 
@@ -65,7 +65,7 @@ export default function Home() {
                 onClick={() => setIsModalOpen(true)} 
                 style={{ color: "cyan", background: "none", border: "none", cursor: "pointer", fontSize: "inherit", fontFamily: "inherit" }}
               >
-                Login / Cadastro
+                {'Login / Cadastro'}
               </button>
             </li>
           </ul>
@@ -74,7 +74,7 @@ export default function Home() {
         <section className="titulo" id="inicio">
           <div>
             <picture>
-              <source srcSet="img/fundo-titulo-site.webp" type="image/webp" />
+              <source srcSet="/img/fundo-titulo-site.webp" type="image/webp" />
               <img className="img-fundo" src="/img/fundo-titulo-site.webp" alt="fundo" loading="lazy" />
             </picture>
           </div>
@@ -92,8 +92,8 @@ export default function Home() {
           <h2 className="titulo-sobre">Sobre</h2>
           <figure className="avatar">
             <picture>
-              <source srcSet="img/jayne.webp" type="image/webp" />
-              <source srcSet="img/jayne.png" type="image/png" />
+              <source srcSet="/img/jayne.webp" type="image/webp" />
+              <source srcSet="/img/jayne.png" type="image/png" />
               <img src="/img/jayne.png" alt="Foto de Jayne Soraya sentada na grama sorrindo" loading="lazy" />
             </picture>
           </figure>
@@ -368,9 +368,9 @@ export default function Home() {
       <footer className="rodape" id="rodape">
         <div>
           <div>
-            <p>Powered by JSSYSTEM Copyright © 2025. All Rights Reserved.</p>
+            <p>Powered by JSSYSTEM Copyright {'©'} 2025. All Rights Reserved.</p>
           </div>
-          <div>Feito com ❤️ por Jayne Soraya</div>
+          <div>Feito com {'❤️'} por Jayne Soraya</div>
         </div>
       </footer>
     </>
