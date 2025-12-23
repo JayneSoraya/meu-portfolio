@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import { sql } from "@vercel/postgres";
 import  bcrypt from "bcrypt";
 import { cookies } from "next/headers";
-import { error } from "console";
 
 export async function POST(request: Request) {
     try{
@@ -25,7 +24,8 @@ export async function POST(request: Request) {
             message: "Login realizado!",
             user: {nome: user.name}
         });
-    } catch(error){
+    } catch (err) {
+        console.error(err);
         return NextResponse.json({ error: "Erro interno"}, {status: 500});
     }
 }
