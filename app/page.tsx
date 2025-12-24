@@ -1,15 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image"; // Importação necessária
-import { useRouter } from "next/navigation"; // Para redirecionar após login
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoginView, setIsLoginView] = useState(true);
   const router = useRouter();
 
-  // Função de Login Conectada à API
+  // --- FUNÇÃO DE LOGIN ---
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     const emailEl = document.getElementById('login-email') as HTMLInputElement;
@@ -22,22 +22,27 @@ export default function Home() {
         headers: { 'Content-Type': 'application/json' }
       });
 
-      const data = await response.json();
-
       if (response.ok) {
-        alert(`Bem-vinda, ${data.user.nome}! Redirecionando para área de vídeos...`);
+        const data = await response.json();
+        alert(`Bem-vinda, ${data.user.nome}! Redirecionando...`);
         setIsModalOpen(false);
-        router.push("/videos"); // Envia o usuário para a área protegida
+        router.push("/videos");
       } else {
-        alert(data.error || "Erro ao fazer login");
+        // Tenta ler o erro, se não conseguir, exibe erro genérico
+        try {
+            const errorData = await response.json();
+            alert(errorData.error);
+        } catch {
+            alert("Erro ao fazer login (Verifique se o servidor está rodando).");
+        }
       }
     } catch (error) {
       console.error(error);
-      alert("Erro ao conectar com o servidor");
+      alert("Erro de conexão com o servidor.");
     }
   };
 
-  // Função de Cadastro
+  // --- FUNÇÃO DE CADASTRO ---
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     const nomeEl = document.getElementById('cad-nome') as HTMLInputElement;
@@ -58,7 +63,7 @@ export default function Home() {
       });
 
       if (response.ok) {
-        alert("Cadastro realizado com segurança! Agora faça login.");
+        alert("Cadastro realizado! Faça login agora.");
         setIsLoginView(true);
       } else {
         alert("Erro ao cadastrar.");
@@ -85,10 +90,9 @@ export default function Home() {
 
           <ul className="container">
             <li><a href="#inicio">Início</a></li>
-            <li><a href="#sobre">Sobre mim</a></li>
+            <li><a href="#sobre">Sobre</a></li>
             <li><a href="#portifolio">Projetos</a></li>
             <li><a href="#servico">Serviços</a></li>
-            <li><a href="#servico">Blog</a></li>
             <li><a href="#contato">Contato</a></li>
             <li>
               <button
@@ -111,7 +115,7 @@ export default function Home() {
               priority
             />
           </div>
-          <div style={{ position: 'relative', zIndex: 1 }}>
+          <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', marginTop: '-200px' }}>
             <h1 className="site-title">Jayne Soraya dos Santos Silva</h1>
             <h2 className="site-subtitle">🚧 Portifólio em construção 🚧 dev full-stack developer</h2>
             <h2 className="site-subtitle">sr. email responder</h2>
@@ -124,7 +128,6 @@ export default function Home() {
         <section className="sobre container" id="sobre">
           <h2 className="titulo-sobre">Sobre</h2>
           <figure className="avatar">
-            {/* LINHA 52: Alterada de <img> para <Image /> */}
             <Image 
               src="/img/jayne.png" 
               alt="Foto de Jayne Soraya" 
@@ -134,14 +137,15 @@ export default function Home() {
             />
           </figure>
           <p>Dev que entende de gente e de máquina 🚀</p>
-          <p>Future Systems Analyst | ADS. Interesse em Infraestrutura, DevOps e Automação.</p>
+          <p>Future Systems Analyst | Em formação em Análise e Desenvolvimento de Sistemas.</p>
+          <p>Experiência com suporte técnico corporativo, resolução de incidentes complexos e administração de ambientes Windows e Linux.</p>
         </section>
 
         {/* ================= SEÇÃO PORTFÓLIO ================= */}
         <section className="portifolio container" id="portifolio">
           <h2>Projetos</h2>
           <div className="grid">
-            {/* Exemplo de card corrigido com Image */}
+            {/* Card 1 */}
             <div className="flip-card">
               <div className="card">
                 <figure className="card-front">
@@ -160,12 +164,178 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            {/* Repetir o padrão para os outros cards usando <Image /> */}
+            
+            {/* Card 2*/}
+          <div className="flip-card">
+              <div className="card">
+                <figure className="card-front">
+                  <Image 
+                    src="/img/auditoria.jpg" 
+                    alt="Mulher olhando papeis" 
+                    width={300} 
+                    height={200} 
+                    className="img-portifolio"
+                  />
+                </figure>
+                <div className="card-back">
+                  <h3>Auditoria Tembici</h3>
+                  <p>Automatizei o processo de IAM com JavaScript, validando prazos e gerando chamados.</p>
+                  <a href="https://www.linkedin.com/posts/jayne-soraya_sempre-busco-um-jeito-de-inovar-para-os-clientes-activity-7288344763362168832-mMlM?utm_source=share&utm_medium=member_desktop&rcm=ACoAACEhVZcB0j6ppdOhc_yT1YQRoSayumR8aNo" target="_blank" className="btn-link">Saiba mais</a>
+				        </div>
+              </div>
+            </div>
+          {/* card 3 */}
+
+          <div className="flip-card">
+              <div className="card">
+                <figure className="card-front">
+                  <Image 
+                    src="/img/alura.jpg" 
+                    alt="Logo imersão Alura" 
+                    width={300} 
+                    height={200} 
+                    className="img-portifolio"
+                  />
+                </figure>
+                <div className="card-back">
+                  <h3>Imersões Alura</h3>
+                  <p>Usado como laboratório, faço as aulas usando a plataforma da Alura, o famoso mão na massa.</p>
+                  <a href="https://github.com/JayneSoraya/Lab-Alura/blob/main/README.md" target="_blank" className="btn-link">Ver projetos no Git</a>
+				        </div>
+              </div>
+            </div>
+
+            {/* card 4 */}
+            <div className="flip-card">
+              <div className="card">
+                <figure className="card-front">
+                  <Image 
+                    src="/img/leigosetroianos.jpg" 
+                    alt="Logo Leigos e Troianos" 
+                    width={300} 
+                    height={200} 
+                    className="img-portifolio"
+                  />
+                </figure>
+                <div className="card-back">
+                  <h3>Leigos e Troianos</h3>
+                  <p>Desenvolvi um site no Google Sites para automatizar horários, coletar dados de NPS e enviar pesquisas por e-mail com JavaScript.</p>
+                  <a href="https://sites.google.com/view/leigos-e-troianos-atendimento/biografia" target="_blank" className="btn-link">Saiba mais</a>
+				        </div>
+              </div>
+            </div>
+
+            {/* card 5 */}
+
+            <div className="flip-card">
+              <div className="card">
+                <figure className="card-front">
+                  <Image 
+                    src="/img/empreendasenac.jpg" 
+                    alt="empreenda senac logo" 
+                    width={300} 
+                    height={200} 
+                    className="img-portifolio"
+                  />
+                </figure>
+                <div className="card-back">
+                  <h3>Empreenda Senac</h3>
+                  <p>Criação do projeto SaveMoney para o evento do empreenda Senac 18ª edição. Cheguei na semi final, foi uma experiência fascinante!</p>
+                  <a href="https://github.com/JayneSoraya/Empreenda-Senac" target="_blank" className="btn-link">Ver projeto no Git</a>
+				        </div>
+              </div>
+            </div>
+
+          {/* card 6 */}
+
+          <div className="flip-card">
+              <div className="card">
+                <figure className="card-front">
+                  <Image 
+                    src="/img/logocomletrinha.jpg" 
+                    alt="intuictive logo" 
+                    width={300} 
+                    height={200} 
+                    className="img-portifolio"
+                  />
+                </figure>
+                <div className="card-back">
+                  <h3>Intuictive</h3>
+                  <p>Comunicação em massa com JavaScript para ação preventiva sobre a descontinuidade do Sat e a migração para NFCe.</p>
+                  <a href="https://www.linkedin.com/posts/jayne-soraya_javascript-desenvolvimentoweb-aprendizadocontaednuo-activity-7405279123151187969-4oWW?utm_source=share&utm_medium=member_desktop&rcm=ACoAACEhVZcB0j6ppdOhc_yT1YQRoSayumR8aNo" target="_blank" className="btn-link">Saiba mais</a>
+			        	</div>
+              </div>
+            </div>
+
+          {/* card 7 */}
+
+          <div className="flip-card">
+              <div className="card">
+                <figure className="card-front">
+                  <Image 
+                    src="/img/primeiraArte.jpg" 
+                    alt="vetores" 
+                    width={300} 
+                    height={200} 
+                    className="img-portifolio"
+                  />
+                </figure>
+                <div className="card-back">
+                  <h3>Artes</h3>
+                  <p>Aplicando teoria, técnica e prática da publicidade e propaganda.</p>
+                  <a href="https://www.behance.net/jaynesoraya/projects" target="_blank" className="btn-link">Saiba mais</a>
+				        </div>
+              </div>
+            </div>
+
           </div>
         </section>
 
-        {/* ================= SEÇÃO SERVIÇOS E CONTATO (Mantidas) ================= */}
-        {/* ... código anterior ... */}
+        {/* ================= SEÇÃO SERVIÇOS ================= */}
+        <section className="servicos container" id="servico">
+          <h2>Serviços</h2>
+          <div className="servicos-content">
+            <div className="servicos-info">
+              <h3>O que posso fazer por você?</h3>
+              <ul>
+                <li>Criação de Landing Pages</li>
+                <li>Automação de processos</li>
+                <li>Configuração de Infraestrutura</li>
+                <li>Suporte Técnico Especializado</li>
+              </ul>
+            </div>
+
+            <div className="from-container">
+              <h3>Solicite um orçamento</h3>
+              <form action="https://formsubmit.co/jayne.soraya@hotmail.com" method="POST">
+                <input type="hidden" name="_next" value="https://jaynesoraya.github.io/meu-portfolio/" />
+                <div className="input-group">
+                  <label htmlFor="nome">Nome</label>
+                  <input type="text" id="nome" name="nome" required placeholder="Digite seu nome" />
+                </div>
+                <div className="input-group">
+                  <label htmlFor="email">E-mail</label>
+                  <input type="email" id="email" name="email" required placeholder="Informe seu e-mail" />
+                </div>
+                <div className="input-group">
+                  <label htmlFor="mensagem">Mensagem</label>
+                  <textarea id="mensagem" name="message" rows={4} required placeholder="Descreva o que precisa..."></textarea>
+                </div>
+                <button type="submit" className="btn-enviar">Enviar Solicitação</button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        {/* ================= SEÇÃO CONTATO ================= */}
+        <section className="contato container" id="contato">
+          <h2>Contato</h2>
+          <div className="icons">
+            <a target="_blank" href="https://github.com/JayneSoraya">GitHub</a>
+            <a target="_blank" href="https://www.linkedin.com/in/jayne-soraya/">LinkedIn</a>
+            <a href="mailto:jayne.soraya@hotmail.com">E-mail</a>
+          </div>
+        </section>
       </main>
 
       {/* ================= MODAL LOGIN / CADASTRO ================= */}
@@ -173,8 +343,10 @@ export default function Home() {
         <div id="modal-login" className="modal-container" style={{ display: "flex" }}>
           <div className="modal-content">
             <span className="close-btn" onClick={() => setIsModalOpen(false)}>&times;</span>
+            
             <div id="form-box">
               {isLoginView ? (
+                // --- VISÃO LOGIN ---
                 <div id="Login-view">
                   <h2>Acesse a Área VIP</h2>
                   <form onSubmit={handleLogin}>
@@ -191,6 +363,7 @@ export default function Home() {
                   </form>
                 </div>
               ) : (
+                // --- VISÃO CADASTRO ---
                 <div id="cadastro-view">
                   <h2>Crie sua conta</h2>
                   <form onSubmit={handleRegister}>
@@ -216,9 +389,12 @@ export default function Home() {
         </div>
       )}
 
-      <footer className="rodape">
-        <p>Powered by JSSYSTEM Copyright © 2025. All Rights Reserved.</p>
-        <p>Feito com ❤️ por Jayne Soraya</p>
+      {/* ================= RODAPÉ ================= */}
+      <footer className="rodape" id="rodape">
+        <div>
+          <p>Powered by JSSYSTEM Copyright © 2025. All Rights Reserved.</p>
+          <div>Feito com ❤️ por Jayne Soraya</div>
+        </div>
       </footer>
     </>
   );
