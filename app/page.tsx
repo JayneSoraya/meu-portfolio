@@ -137,8 +137,10 @@ export default function Home() {
             />
           </figure>
           <p>Dev que entende de gente e de máquina 🚀</p>
-          <p>Future Systems Analyst | Em formação em Análise e Desenvolvimento de Sistemas.</p>
-          <p>Experiência com suporte técnico corporativo, resolução de incidentes complexos e administração de ambientes Windows e Linux.</p>
+          <p>Future Systems Analyst | Em formação em Análise e Desenvolvimento de Sistemas. Interesse em Infraestrutura, DevOps e Automação.</p>
+          <p>Experiência com suporte técnico corporativo, resolução de incidentes complexos e administração de ambientes Windows e Linux, além de automação com Google Apps Script.</p>
+          <p>Conhecimento em Active Directory, VPN, ITIL, Office 365 e atendimento ao usuário com foco em eficiência e melhoria contínua.</p>
+          <p>Busco desafios para aplicar minhas habilidades e contribuir com inovação e eficiência em TI.</p>
         </section>
 
         {/* ================= SEÇÃO PORTFÓLIO ================= */}
@@ -190,7 +192,7 @@ export default function Home() {
               <div className="card">
                 <figure className="card-front">
                   <Image 
-                    src="/img/alura.jpg" 
+                    src="/img/alura.png" 
                     alt="Logo imersão Alura" 
                     width={300} 
                     height={200} 
@@ -252,7 +254,7 @@ export default function Home() {
               <div className="card">
                 <figure className="card-front">
                   <Image 
-                    src="/img/logocomletrinha.jpg" 
+                    src="/img/logocomletrinha.png" 
                     alt="intuictive logo" 
                     width={300} 
                     height={200} 
@@ -273,7 +275,7 @@ export default function Home() {
               <div className="card">
                 <figure className="card-front">
                   <Image 
-                    src="/img/primeiraArte.jpg" 
+                    src="/img/primeiraArte.webp" 
                     alt="vetores" 
                     width={300} 
                     height={200} 
@@ -327,13 +329,25 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ================= SEÇÃO CONTATO ================= */}
+         {/* ================= SEÇÃO CONTATO ================= */}
         <section className="contato container" id="contato">
           <h2>Contato</h2>
           <div className="icons">
-            <a target="_blank" href="https://github.com/JayneSoraya">GitHub</a>
-            <a target="_blank" href="https://www.linkedin.com/in/jayne-soraya/">LinkedIn</a>
-            <a href="mailto:jayne.soraya@hotmail.com">E-mail</a>
+            <a target="_blank" href="https://github.com/JayneSoraya">
+              <i className="fab fa-github"></i>
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/in/jayne-soraya/">
+              <i className="fab fa-linkedin"></i>
+            </a>
+            <a href="https://wa.me/5516988209408?text=Olá,%20vi%20seu%20portfólio%20e%20quero%20um%20orçamento" target="_blank" className="btn-link" style={{ display: "inline-block", color: "#FFFF" }}>
+              <i className="fab fa-whatsapp"></i>
+            </a>
+            <a target="_blank" href="https://www.behance.net/jaynesoraya/services">
+              <i className="devicon-behance-plain"></i>
+            </a>
+            <a href="mailto:jayne.soraya@hotmail.com">
+              <i className="fas fa-envelope"></i>
+            </a>
           </div>
         </section>
       </main>

@@ -3,6 +3,7 @@ import { sql } from "@vercel/postgres";
 import bcrypt from "bcrypt";
 
 export async function POST(request: Request) {
+  console.log("Recebi uma tentativa de CADASTRO!");
   try {
     const { nome, email, senha } = await request.json();
 

@@ -4,6 +4,7 @@ import  bcrypt from "bcrypt";
 import { cookies } from "next/headers";
 
 export async function POST(request: Request) {
+    console.log("Recebi uma tentativa de login!");
     try{
         const {email, senha} = await request.json();
         const result = await sql `SELECT * FROM users WHERE email = ${email}`;
