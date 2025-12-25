@@ -95,10 +95,7 @@ export default function Home() {
             <li><a href="#servico">Serviços</a></li>
             <li><a href="#contato">Contato</a></li>
             <li>
-              <button
-                onClick={() => setIsModalOpen(true)}
-                style={{ color: "cyan", background: "none", border: "none", cursor: "pointer", fontSize: "inherit", fontFamily: "inherit" }}
-              >
+              <button className="btn-login" onClick={() => setIsModalOpen(true)}>
                 Login / Cadastro
               </button>
             </li>
@@ -106,7 +103,7 @@ export default function Home() {
         </nav>
 
         <section className="titulo" id="inicio">
-          <div style={{ position: 'relative', width: '100%', height: '400px' }}>
+          <div style={{ position: 'relative', width: '1896px', height: '454px' }}>
             <Image
               src="/img/fundo-titulo-site.webp"
               alt="Fundo título"
@@ -117,7 +114,7 @@ export default function Home() {
           </div>
           <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', marginTop: '-200px' }}>
             <h1 className="site-title">Jayne Soraya dos Santos Silva</h1>
-            <h2 className="site-subtitle">🚧 Portifólio em construção 🚧 dev full-stack developer</h2>
+            <h2 className="site-subtitle">{'🚧'} Portifólio em construção {'🚧'} dev full-stack developer</h2>
             <h2 className="site-subtitle">sr. email responder</h2>
           </div>
         </section>
@@ -161,7 +158,7 @@ export default function Home() {
                 </figure>
                 <div className="card-back">
                   <h3>Projeto App PLP</h3>
-                  <p>Documento de requisitos para PLPs.</p>
+                  <p>Criei o documento de requisitos das Promotoras Legais Populares (PLPs).</p>
                   <a href="https://github.com/JayneSoraya/projeto-plp-araraquara" target="_blank" className="btn-link">Ver no Git</a>
                 </div>
               </div>
@@ -172,8 +169,8 @@ export default function Home() {
               <div className="card">
                 <figure className="card-front">
                   <Image 
-                    src="/img/auditoria.jpg" 
-                    alt="Mulher olhando papeis" 
+                    src="/img/logo-tembici.svg" 
+                    alt="Logo Tembici" 
                     width={300} 
                     height={200} 
                     className="img-portifolio"
@@ -242,7 +239,7 @@ export default function Home() {
                 </figure>
                 <div className="card-back">
                   <h3>Empreenda Senac</h3>
-                  <p>Criação do projeto SaveMoney para o evento do empreenda Senac 18ª edição. Cheguei na semi final, foi uma experiência fascinante!</p>
+                  <p>Criei o SaveMoney para a competição do empreenda Senac 18ª edição. Cheguei na semi final, foi uma experiência fascinante!</p>
                   <a href="https://github.com/JayneSoraya/Empreenda-Senac" target="_blank" className="btn-link">Ver projeto no Git</a>
 				        </div>
               </div>
@@ -373,7 +370,7 @@ export default function Home() {
                       <input type="password" id="login-senha" required />
                     </div>
                     <button type="submit" className="btn-enviar">Entrar</button>
-                    <p>Não tem conta? <button type="button" onClick={() => setIsLoginView(false)} style={{background: "none", border: "none", color: "blue", cursor: "pointer", textDecoration: "underline"}}>Cadastre-se</button></p>
+                    <p>Não tem conta? <button type="button" onClick={() => setIsLoginView(false)} style={{background: "none", border: "none", color: "#00FFFF", cursor: "pointer", textDecoration: "none"}}>Cadastre-se</button></p>
                   </form>
                 </div>
               ) : (
@@ -407,7 +404,7 @@ export default function Home() {
       <footer className="rodape" id="rodape">
         <div>
           <p>Powered by JSSYSTEM Copyright © 2025. All Rights Reserved.</p>
-          <div>Feito com ❤️ por Jayne Soraya</div>
+          <div>Feito com {'❤️'}por Jayne Soraya</div>
         </div>
       </footer>
     </>

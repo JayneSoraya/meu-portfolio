@@ -37,6 +37,7 @@ body {
   }
   .sobre h2,
   .portifolio h2,
+  .servicos h2,
   .contato h2{
     padding: 4rem;
   }
@@ -84,8 +85,8 @@ header {
 .menu ul{
     display: flex;
     gap: 15px;
-    
-    
+    align-items: center;
+    list-style: none;
 }
 
 .menu ul.container{
@@ -95,6 +96,7 @@ header {
 .menu li {
  list-style: none; 
 }
+
 
 .menu a {
   display: block;
@@ -113,6 +115,25 @@ a {
   text-decoration: none;
   border-radius: 20px;
 }
+.btn-login{
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: "inherit";
+  padding:  10px 20px;
+  transition: background-color 1s, color 1s;
+  display: block;
+  line-height: normal;
+  font-family: 'Source Code Pro', monospace;
+}
+
+.btn-login:hover {
+    background-color: #FFFFFF;
+    color: #002B5B !important;
+    border-radius: 20px;
+}
 
 a:hover {
   text-decoration: none;
@@ -126,7 +147,7 @@ a:hover {
 
 @keyframes animacaoTitulo {
   from {
-    transform: scale(0.2) translateY(50vh);
+    transform: scale(0.2) translateY(70vh);
     opacity: 0;
   }
   to {
@@ -137,12 +158,12 @@ a:hover {
 
 .site-subtitle, 
 .site-title {
-  padding: 20px;
   color: #FFFFFF;
   text-align: center;
 }
 
 .site-title {
+  padding-top: 200px;
   font-size: 4em;
   font-family: 'Gloria Hallelujah', cursive;
 }
@@ -151,6 +172,7 @@ a:hover {
  font-style: italic;
  font-family: 'Press Start 2P', cursive;
  line-height: 1.8em;
+ forced-color-adjust: none;
 }
 
 
@@ -181,7 +203,8 @@ a:hover {
   margin-bottom: 1.5rem;
   margin-top: 1.5rem;
   font-size: 2rem;
-
+  justify-content: center;
+  padding: 3rem;
 }
 
 .sobre p {
@@ -365,6 +388,8 @@ a:hover {
   background-color: #FFFFFF;
   color: #002B5B;
   border: none;
+  margin-top: 20px;
+  margin-bottom: 60px;
   padding: 12px 24px;
   font-size: 1rem;
   font-weight:  bold;
