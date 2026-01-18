@@ -135,7 +135,7 @@ export default function Home() {
           </figure>
           <p>Dev que entende de gente e de máquina 🚀</p>
           <p>Future Systems Analyst | Em formação em Análise e Desenvolvimento de Sistemas. Interesse em Infraestrutura, DevOps e Automação.</p>
-          <p>Experiência com suporte técnico corporativo, resolução de incidentes complexos e administração de ambientes Windows e Linux, além de automação com Google Apps Script.</p>
+          <p>Experiência com suporte técnico corporativo, resolução de incidentes complexos e administração de ambientes Windows, Mac e Linux, além de automação com JavaScript.</p>
           <p>Conhecimento em Active Directory, VPN, ITIL, Office 365 e atendimento ao usuário com foco em eficiência e melhoria contínua.</p>
           <p>Busco desafios para aplicar minhas habilidades e contribuir com inovação e eficiência em TI.</p>
         </section>
@@ -157,7 +157,7 @@ export default function Home() {
                   />
                 </figure>
                 <div className="card-back">
-                  <h3>Projeto App PLP</h3>
+                  <h3>Projeto App PLPs</h3>
                   <p>Criei o documento de requisitos das Promotoras Legais Populares (PLPs).</p>
                   <a href="https://github.com/JayneSoraya/projeto-plp-araraquara" target="_blank" className="btn-link">Ver no Git</a>
                 </div>
@@ -169,7 +169,7 @@ export default function Home() {
               <div className="card">
                 <figure className="card-front">
                   <Image 
-                    src="/img/logo-tembici.svg" 
+                    src="/img/logo-tembici.png" 
                     alt="Logo Tembici" 
                     width={300} 
                     height={200} 
@@ -230,7 +230,7 @@ export default function Home() {
               <div className="card">
                 <figure className="card-front">
                   <Image 
-                    src="/img/empreendasenac.jpg" 
+                    src="/img/empreendasenac.png" 
                     alt="empreenda senac logo" 
                     width={300} 
                     height={200} 
@@ -296,12 +296,15 @@ export default function Home() {
           <div className="servicos-content">
             <div className="servicos-info">
               <h3>O que posso fazer por você?</h3>
-              <ul>
-                <li>Criação de Landing Pages</li>
-                <li>Automação de processos</li>
-                <li>Configuração de Infraestrutura</li>
-                <li>Suporte Técnico Especializado</li>
-              </ul>
+                <div className="input-group">
+                  <label htmlFor="tipo-servico">Tipo de Serviço</label>
+                  <select id="tipo-servico" name="service">
+                    <option value="landing-page">Desenvolvimento Web</option>
+                    <option value="automacao">Automação / Scripting</option>
+                    <option value="suporte">Suporte / Infra</option>
+                    <option value="outro">Outro</option>
+                  </select>
+                </div>
             </div>
 
             <div className="from-container">

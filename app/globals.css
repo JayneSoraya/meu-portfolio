@@ -331,7 +331,7 @@ a:hover {
   border-radius: 10px;
 }
 
-.servicos{
+.servico{
   display: flex;
   align-items: center;
   gap: 1.5rem;
