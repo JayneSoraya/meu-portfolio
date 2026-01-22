@@ -407,7 +407,7 @@ export default function Home() {
       <footer className="rodape" id="rodape">
         <div>
           <p>Powered by JSSYSTEM Copyright © 2025. All Rights Reserved.</p>
-          <div>Feito com {'❤️'}por Jayne Soraya</div>
+          <div>Feito com {'❤️'} por Jayne Soraya</div>
         </div>
       </footer>
     </>
