@@ -1,24 +1,24 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
-export const metadata = {
-  title: "Portfólio Jayne Soraya",
-  description: "Portfólio profissional de Jayne Soraya",
+const inter = Inter({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Jayne Soraya - Full Stack Developer",
+  description: "Portfolio profissional de Jayne Soraya - Desenvolvedora Full Stack especializada em React, Node.js e infraestrutura.",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="pt-br">
-      <head>
-        {/* Fontes e Ícones */}
-        <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-        <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Press+Start+2P&family=Source+Code+Pro&display=swap" rel="stylesheet" />
-        <script async src="https://kit.fontawesome.com/6d6952c5be.js" crossOrigin="anonymous"></script>
-      </head>
-      <body>{children}</body>
+    <html lang="pt-BR">
+      <body className={`${inter.className} bg-[#0a0a0a] text-white antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }
