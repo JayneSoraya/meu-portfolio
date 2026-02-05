@@ -8,7 +8,6 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="py-12 text-center text-neutral-600 text-xs font-mono uppercase border-t border-white/5 relative overflow-hidden">
-      {/* Animated background line */}
       <motion.div
         className="absolute top-0 left-0 h-[2px] bg-gradient-to-r from-transparent via-purple-600 to-transparent"
         animate={{
@@ -28,7 +27,7 @@ const Footer: React.FC = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          Powered by <span className="text-purple-500 font-bold">JSSYSTEM</span> // Copyright © {currentYear}. All Rights Reserved.
+          Powered by <span className="text-purple-500 font-bold">JSSYSTEM</span> Copyright © {currentYear}. All Rights Reserved.
         </motion.p>
         <motion.div
           initial={{ opacity: 0 }}

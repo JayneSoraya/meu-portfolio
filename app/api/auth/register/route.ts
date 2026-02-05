@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { createPool } from "@vercel/postgres"; // Importe o createPool
+import { createPool } from "@vercel/postgres"; 
 import bcrypt from "bcryptjs";
 
 export async function POST(request: Request) {
@@ -29,7 +29,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ message: "Usuário criado com sucesso!" }, { status: 201 });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("ERRO NO BANCO:", error);
     return NextResponse.json({ message: "Erro de conexão com o banco." }, { status: 500 });
   }

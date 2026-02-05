@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Send, CheckCircle } from 'lucide-react';
 import axios from 'axios';
-import type { ContactFormData } from '../types';
+import type { ContactFormData } from '../../types';
 
 const ContactForm: React.FC = () => {
   const [formData, setFormData] = useState<ContactFormData>({
@@ -39,7 +39,8 @@ const ContactForm: React.FC = () => {
       setTimeout(() => {
         setShowSuccess(false);
       }, 5000);
-    } catch (err: any) {
+    } catch (error) {
+      console.error(error); 
       setError('Erro ao enviar mensagem. Tente novamente.');
     } finally {
       setIsSubmitting(false);
