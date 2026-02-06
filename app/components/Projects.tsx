@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { projects } from '../../lib/data';
 import { ExternalLink } from 'lucide-react';
 import type { Project } from '../../types';
@@ -16,7 +16,7 @@ const Projects: React.FC = () => {
     ? projects 
     : projects.filter((p: Project) => p.category === filter);
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -26,14 +26,14 @@ const Projects: React.FC = () => {
     }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.6, 0.05, 0.01, 0.9] as any
+        ease: [0.6, 0.05, 0.01, 0.9]
       }
     }
   };
@@ -56,7 +56,6 @@ const Projects: React.FC = () => {
         <span className="text-purple-500">/ </span>PROJETOS_
       </motion.h2>
 
-      {/* Filter Buttons */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -80,7 +79,6 @@ const Projects: React.FC = () => {
         ))}
       </motion.div>
 
-      {/* Projects Grid */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -94,7 +92,6 @@ const Projects: React.FC = () => {
             variants={itemVariants}
             className="group relative overflow-hidden bg-neutral-900/50 backdrop-blur-sm rounded-2xl border border-white/5 shadow-xl hover:shadow-purple-500/20 transition-all duration-500"
           >
-            {/* Project Image */}
             <div className="relative aspect-video overflow-hidden bg-gradient-to-br from-purple-900 to-purple-600 flex items-center justify-center">
               <Image
                 src={project.image}
@@ -114,15 +111,12 @@ const Projects: React.FC = () => {
               </motion.span>
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
-              {/* Hover overlay */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileHover={{ opacity: 1, y: 0 }}
                 className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500"
               >
-                <motion.div
-                  className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500"
-                >
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
                   <a 
                     href={project.url} 
                     target="_blank" 
@@ -131,11 +125,10 @@ const Projects: React.FC = () => {
                   >
                     <ExternalLink size={24} />
                   </a>
-                </motion.div>
+                </div>
               </motion.div>
             </div>
 
-            {/* Project Info */}
             <div className="p-6 space-y-4">
               <h3 className="text-2xl font-bold group-hover:text-purple-500 transition-colors">
                 {project.title}
@@ -144,7 +137,6 @@ const Projects: React.FC = () => {
                 {project.description}
               </p>
               
-              {/* Tags */}
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag, i) => (
                   <span
@@ -157,7 +149,6 @@ const Projects: React.FC = () => {
               </div>
             </div>
 
-            {/* Decorative corner */}
             <motion.div
               className="absolute top-0 right-0 w-20 h-20 bg-purple-600/10"
               style={{

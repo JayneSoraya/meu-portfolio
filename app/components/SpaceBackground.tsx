@@ -15,7 +15,6 @@ const SpaceBackground: React.FC = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
     
-    // 1. Garantir que o canvas comece com tamanho válido
     canvas.width = window.innerWidth || 800;
     canvas.height = window.innerHeight || 600;
 
@@ -72,7 +71,6 @@ const SpaceBackground: React.FC = () => {
       nebulas.forEach((nebula) => {
         const dx = mouseXPos - nebula.x;
         const dy = mouseYPos - nebula.y;
-        // 2. Proteção contra distância zero (Math.max(0.1, ...))
         const distance = Math.max(0.1, Math.sqrt(dx * dx + dy * dy));
         const force = Math.min(300 / (distance + 1), 2);
 
@@ -84,7 +82,6 @@ const SpaceBackground: React.FC = () => {
         if (nebula.y < 0) nebula.y = canvas.height;
         if (nebula.y > canvas.height) nebula.y = 0;
 
-        // 3. Garantir que o raio do gradiente seja sempre um número positivo finito
         const safeRadius = Math.max(0.1, nebula.radius);
         const gradient = ctx.createRadialGradient(
           nebula.x, nebula.y, 0.1,

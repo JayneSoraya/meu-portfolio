@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 import { Github, Linkedin, Mail, Phone } from 'lucide-react';
 import { socialLinks } from '../../lib/data';
@@ -12,7 +12,7 @@ const BehanceIcon = () => (
   </svg>
 );
 
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, React.ElementType> = {
   github: Github,
   linkedin: Linkedin,
   mail: Mail,
@@ -82,7 +82,6 @@ const Contact: React.FC = () => {
               transition={{ delay: index * 0.1 }}
               className="relative group"
             >
-              {/* Ícone principal com efeito de tremor */}
               <motion.div 
                 className="text-4xl text-neutral-500 group-hover:text-purple-500 transition-colors relative z-10"
                 whileHover={{
@@ -98,7 +97,6 @@ const Contact: React.FC = () => {
                 <Icon size={48} />
               </motion.div>
               
-              {/* Camada de glitch - Vermelha */}
               <motion.div
                 className="absolute inset-0 text-4xl text-red-500 opacity-0 group-hover:opacity-60 -z-10"
                 animate={{
@@ -114,7 +112,6 @@ const Contact: React.FC = () => {
                 <Icon size={48} />
               </motion.div>
               
-              {/* Camada de glitch - Ciano */}
               <motion.div
                 className="absolute inset-0 text-4xl text-cyan-400 opacity-0 group-hover:opacity-60 -z-10"
                 animate={{
@@ -131,7 +128,6 @@ const Contact: React.FC = () => {
                 <Icon size={48} />
               </motion.div>
 
-              {/* Glow effect roxo pulsante */}
               <motion.div
                 className="absolute inset-0 bg-purple-600/30 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-20"
                 animate={{
@@ -145,7 +141,6 @@ const Contact: React.FC = () => {
                 }}
               />
 
-              {/* Tooltip */}
               <motion.span
                 initial={{ opacity: 0, y: 10 }}
                 whileHover={{ opacity: 1, y: 0 }}

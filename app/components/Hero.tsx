@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import Image from 'next/image'; // Importe o componente de imagem do Next.js
+import Image from 'next/image';
 
 const Hero: React.FC = () => {
   return (
@@ -24,7 +24,7 @@ const Hero: React.FC = () => {
         <motion.div
           className="relative h-40 w-40 md:h-52 md:w-52 flex items-center justify-center"
           animate={{
-            y: [0, -15, 0], // Efeito de flutuação suave
+            y: [0, -15, 0], 
           }}
           transition={{
             duration: 4,
@@ -34,11 +34,11 @@ const Hero: React.FC = () => {
         >
           {/* A IMAGEM AQUI */}
           <Image
-            src="/img/inomeado.svg" // Caminho relativo à pasta public
+            src="/img/inomeado.svg" 
             alt="Logo Jayne Soraya"
-            width={200} // Ajuste conforme necessário
+            width={200} 
             height={200}
-            priority // Carrega a imagem com prioridade (LCP)
+            priority 
             className="object-contain"
           />
         </motion.div>

@@ -1,10 +1,10 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion'; 
 import { X, Mail, Lock, User, ArrowLeft } from 'lucide-react';
 import axios from 'axios';
-import type { AuthFormData } from '../types';
+import type { AuthFormData } from '../../types';
 
 interface LoginModalProps {
   isOpen: boolean;
@@ -59,8 +59,12 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
         });
         setCurrentView('reset-sent');
       }
-    } catch (error: any) {
-      setMessage(error.response?.data?.message || 'Erro ao processar solicitação');
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error)) {
+        setMessage(error.response?.data?.message || 'Erro ao processar solicitação');
+      } else {
+        setMessage('Ocorreu um erro inesperado');
+      }
     } finally {
       setIsLoading(false);
     }

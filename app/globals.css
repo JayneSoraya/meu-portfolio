@@ -17,7 +17,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom Scrollbar */
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -36,13 +36,13 @@ body {
   background: #9333ea;
 }
 
-/* Selection Color */
+
 ::selection {
   background: rgba(147, 51, 234, 0.3);
   color: #fff;
 }
 
-/* Typography */
+
 h1, h2, h3, h4 {
   text-transform: uppercase;
   letter-spacing: -0.05em;
@@ -53,7 +53,7 @@ h1, h2, h3, h4 {
   text-transform: uppercase;
 }
 
-/* Glassmorphism */
+
 .backdrop-blur-md {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
