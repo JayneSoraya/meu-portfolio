@@ -15,7 +15,7 @@ export const projects: Project[] = [
     id: 2,
     title: "Auditoria Tembici",
     description: "Automatizei o processo de IAM com JavaScript, validando prazos e gerando chamados.",
-    image: "/img/mulheresFelizes.jpg",
+    image: "/img/logo-tembici.webp",
     url: "https://www.linkedin.com/posts/jayne-soraya_sempre-busco-um-jeito-de-inovar-para-os-clientes-activity-7288344763362168832-mMlM/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACEhVZcB0j6ppdOhc_yT1YQRoSayumR8aNo",
     tags: ["Jira", "Google Sheets", "JavaScript"],
     category: "automacao" 
@@ -24,7 +24,7 @@ export const projects: Project[] = [
     id: 3,
     title: "Leigos e Troianos",
     description: "Desenvolvi um site no Google Sites para automatizar horários, coletar dados de NPS e enviar pesquisas por e-mail com JavaScript.",
-    image: "/img/mulheresFelizes.jpg",
+    image: "/img/leigosetroianos.webp",
     url: "https://sites.google.com/view/leigos-e-troianos-atendimento/biografia",
     tags: ["Google Sites", "Automação", "JavaScript", "Full Stack"],
     category: "desenvolvimento"
@@ -33,7 +33,7 @@ export const projects: Project[] = [
     id: 4,
     title: "Comunicação em massa",
     description: "Comunicação em massa com JavaScript para ação preventiva sobre a descontinuidade do Sat e a migração para NFCe.",
-    image: "/img/mulheresFelizes.jpg",
+    image: "/img/logocomletrinha.webp",
     url: "https://www.linkedin.com/posts/jayne-soraya_javascript-desenvolvimentoweb-aprendizadocontaednuo-activity-7405279123151187969-4oWW/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACEhVZcB0j6ppdOhc_yT1YQRoSayumR8aNo",
     tags: ["JavaScript", "NFCe", "Sat"],
     category: "automacao"
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     id: 5,
     title: "Imersões Alura",
     description: "Usado como laboratório, faço as aulas usando a plataforma da Alura, o famoso mão na massa.",
-    image: "/img/mulheresFelizes.jpg",
+    image: "/img/alura.webp",
      url: "https://github.com/JayneSoraya/Lab-Alura/blob/main/README.md",
     tags: ["Python", "Automação", "DevOps"],
     category: "desenvolvimento"
@@ -52,7 +52,7 @@ export const projects: Project[] = [
     id: 6,
     title: "Empreenda Senac",
     description: "Criei o SaveMoney para a competição do empreenda Senac 18ª edição. Cheguei na semi final, foi uma experiência fascinante!",
-    image: "/img/mulheresFelizes.jpg",
+    image: "/img/empreendasenac.webp",
      url: "https://github.com/JayneSoraya/Empreenda-Senac",
     tags: ["React", "UI/UX", "Responsive"],
     category: "desenvolvimento"
@@ -62,7 +62,7 @@ export const projects: Project[] = [
     id: 7,
     title: "Artes",
     description: "Aplicando teoria, técnica e prática da publicidade e propaganda.",
-    image: "/img/mulheresFelizes.jpg",
+    image: "/img/primeiraArte.webp",
      url: "https://github.com/JayneSoraya/Empreenda-Senac",
     tags: ["React", "UI/UX", "Responsive"],
     category: "desenvolvimento"
@@ -71,11 +71,11 @@ export const projects: Project[] = [
   ,
   {
     id: 8,
-    title: "Artes",
-    description: "Aplicando teoria, técnica e prática da publicidade e propaganda.",
-    image: "/img/mulheresFelizes.jpg",
+    title: "Jovo vivência escolar",
+    description: "Produzi um projeto sobre a vivência escolar do Ensino Integral para habituar os alunos.",
+    image: "/img/jogoEscolar.png",
      url: "https://github.com/JayneSoraya/Empreenda-Senac",
-    tags: ["React", "UI/UX", "Responsive"],
+    tags: ["Unity", "UI/UX", "Responsive"],
     category: "desenvolvimento"
   }
 ];
