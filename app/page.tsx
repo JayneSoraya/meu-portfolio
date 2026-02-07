@@ -9,6 +9,7 @@ import ContactForm from './components/ContactForm';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Skills from './components/Skills';
+import HardSkills from './components/HardSkills';
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <Hero />
         <About />
         <Skills />
+        <HardSkills/>
         <Projects />
         <ContactForm />
         <Contact />

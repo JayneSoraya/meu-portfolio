@@ -1,5 +1,5 @@
 
-import type { Project, Skill, AboutText, SocialLink } from '../types';
+import type { Project, Skill, AboutText, SocialLink, HardSkill } from '../types';
 
 export const projects: Project[] = [
   {
@@ -71,8 +71,8 @@ export const projects: Project[] = [
   ,
   {
     id: 8,
-    title: "Jovo vivência escolar",
-    description: "Produzi um projeto sobre a vivência escolar do Ensino Integral para habituar os alunos.",
+    title: "Jogo Vivência escolar",
+    description: "Sinais que amo o mundo do desenvolvimento em 2014. Na epoca Produzi um projeto sobre um jogo que demonstrava a vivência escolar do Ensino Integral para habituar os alunos.",
     image: "/img/jogoEscolar.png",
      url: "https://github.com/JayneSoraya/Empreenda-Senac",
     tags: ["Unity", "UI/UX", "Responsive"],
@@ -81,14 +81,26 @@ export const projects: Project[] = [
 ];
 
 export const skills: Skill[] = [
-  { name: "React", level: 90 },
-  { name: "Node.js", level: 85 },
-  { name: "MongoDB", level: 80 },
-  { name: "Python", level: 85 },
+  { name: "React", level: 70 },
+  { name: "Node.js", level: 70 },
+  { name: "JavaScript", level: 75 },
+  { name: "Python", level: 65 },
   { name: "PL/SQL", level: 90 },
-  { name: "Docker", level: 75 },
+  { name: "Docker", level: 60 },
   { name: "Git", level: 95 },
-  { name: "Infraestrutura", level: 88 }
+  { name: "Infraestrutura", level: 90 }
+];
+
+
+export const hardSkills: HardSkill[] = [
+  { name: "Proatividade", level: 91 },
+  { name: "Liderança", level: 72 },
+  { name: "Comunicação", level: 93 },
+  { name: "Resolução de Problemas", level: 95 },
+  { name: "Criatividade", level: 90 },
+  { name: "Inovação", level: 85 },
+  { name: "Inglês Reading, writing and listening", level: 50 },
+  { name: "Trabalho em equipe", level: 85 }
 ];
 
 export const aboutText: AboutText = {

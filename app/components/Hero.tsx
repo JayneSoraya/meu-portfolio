@@ -82,7 +82,6 @@ const Hero: React.FC = () => {
         Full Stack Developer 👷🏽 portifólio em construção 🚧
       </motion.p>
 
-      {/* Restante do componente (partículas e scroll indicator) mantidos... */}
       <motion.div
         className="absolute w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px] -z-10"
         animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
