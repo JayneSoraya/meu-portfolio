@@ -11,8 +11,9 @@ const Header: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleDownloadCV = () => {
+    const pdfUrl = '/img/curriculum.pdf';
     const link = document.createElement('a');
-    link.href = '/curriculum.pdf';
+    link.href = pdfUrl;
     link.download = 'Jayne_Soraya_Curriculum.pdf';
     document.body.appendChild(link);
     link.click();

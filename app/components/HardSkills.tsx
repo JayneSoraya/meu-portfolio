@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { skills } from '../../lib/data';
+import { hardSkills} from '../../lib/data';
 
-const Skills: React.FC = () => {
+const HardSkills: React.FC = () => {
   return (
     <section className="py-20 container mx-auto px-6">
       <motion.h2
@@ -13,13 +13,13 @@ const Skills: React.FC = () => {
         viewport={{ once: true }}
         className="text-4xl md:text-5xl font-bold mb-12 tracking-tighter"
       >
-        <span className="text-purple-500">/ </span>SOFT SKILLS_
+        <span className="text-purple-500">/ </span>HARD SKILLS_
       </motion.h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {skills.map((skill, index) => (
+        {hardSkills.map((hardSkill, index) => (
           <motion.div
-            key={skill.name}
+            key={hardSkill.name}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -27,15 +27,15 @@ const Skills: React.FC = () => {
             className="space-y-2"
           >
             <div className="flex justify-between items-end">
-              <span className="font-bold text-lg uppercase tracking-wider">{skill.name}</span>
-              <span className="text-purple-400 font-mono">{skill.level}%</span>
+              <span className="font-bold text-lg uppercase tracking-wider">{hardSkill.name}</span>
+              <span className="text-purple-400 font-mono">{hardSkill.level}%</span>
             </div>
             
             {/* Barra de Progresso */}
             <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
               <motion.div
                 initial={{ width: 0 }}
-                whileInView={{ width: `${skill.level}%` }}
+                whileInView={{ width: `${hardSkill.level}%` }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.5, ease: "easeOut" }}
                 className="h-full bg-purple-600 rounded-full"
@@ -48,4 +48,4 @@ const Skills: React.FC = () => {
   );
 };
 
-export default Skills;
+export default HardSkills;

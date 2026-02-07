@@ -101,14 +101,8 @@ const Projects: React.FC = () => {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
 
-              <motion.span 
-                className="text-white text-3xl font-bold text-center px-4"
-                initial={{ opacity: 0.7 }}
-                whileHover={{ opacity: 1, scale: 1.1 }}
-                transition={{ duration: 0.3 }}
-              >
-                {project.title}
-              </motion.span>
+              {/* REMOVIDO O BLOCO motion.span QUE CONTINHA O TÍTULO SOBRE A IMAGEM */}
+              
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               <motion.div

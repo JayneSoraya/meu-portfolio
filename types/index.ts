@@ -13,6 +13,11 @@ export interface Skill {
   level: number;
 }
 
+export interface HardSkill {
+  name: string;
+  level: number;
+}
+
 export interface AboutText {
   title: string;
   description: string;
