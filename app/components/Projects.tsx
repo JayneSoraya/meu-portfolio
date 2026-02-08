@@ -80,6 +80,7 @@ const Projects: React.FC = () => {
       </motion.div>
 
       <motion.div
+      key={filter}
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -100,8 +101,6 @@ const Projects: React.FC = () => {
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
-
-              {/* REMOVIDO O BLOCO motion.span QUE CONTINHA O TÍTULO SOBRE A IMAGEM */}
               
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
