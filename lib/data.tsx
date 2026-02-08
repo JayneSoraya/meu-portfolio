@@ -9,7 +9,7 @@ export const projects: Project[] = [
     image: "/img/mulheresFelizes.jpg",
     url: "https://github.com/JayneSoraya/projeto-plp-araraquara",
     tags: ["Full Stack", "UML", "Java"],
-    category: "desenvolvimento"
+    category: "impactoSocial"
   },
   {
     id: 2,
