@@ -44,7 +44,6 @@ const Contact: React.FC = () => {
       ref={containerRef}
       onMouseMove={handleMouseMove}
     >
-      {/* Efeito de luz roxa que segue o mouse */}
       <motion.div
         className="absolute inset-0 pointer-events-none opacity-40"
         style={{
