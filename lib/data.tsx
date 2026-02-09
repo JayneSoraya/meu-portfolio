@@ -83,10 +83,10 @@ export const projects: Project[] = [
 export const skills: Skill[] = [
   { name: "React", level: 70 },
   { name: "Node.js", level: 70 },
-  { name: "JavaScript", level: 75 },
+  { name: "JavaScript", level: 85 },
   { name: "Python", level: 65 },
   { name: "PL/SQL", level: 90 },
-  { name: "Docker", level: 60 },
+  { name: "Java", level: 65 },
   { name: "Git", level: 95 },
   { name: "Infraestrutura", level: 90 }
 ];
