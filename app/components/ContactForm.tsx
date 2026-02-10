@@ -41,7 +41,7 @@ const ContactForm: React.FC = () => {
       }, 5000);
     } catch (error) {
       console.error(error); 
-      setError('Erro ao enviar mensagem. Tente novamente.');
+      setError('Erro ao enviar mensagem. Tente novamente...');
     } finally {
       setIsSubmitting(false);
     }
