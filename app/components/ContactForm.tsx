@@ -16,9 +16,6 @@ const ContactForm: React.FC = () => {
   const [showSuccess, setShowSuccess] = useState(false);
   const [error, setError] = useState('');
 
-  const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
-  const API = `${BACKEND_URL}/api`;
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -32,7 +29,8 @@ const ContactForm: React.FC = () => {
     setError('');
 
     try {
-      await axios.post(`${API}/contact`, formData);
+      await axios.post('/api/contact', formData);
+      
       setShowSuccess(true);
       setFormData({ name: '', email: '', message: '' });
       
@@ -41,7 +39,7 @@ const ContactForm: React.FC = () => {
       }, 5000);
     } catch (error) {
       console.error(error); 
-      setError('Erro ao enviar mensagem. Tente novamente.');
+      setError('Erro ao enviar mensagem. Tente novamente...');
     } finally {
       setIsSubmitting(false);
     }
