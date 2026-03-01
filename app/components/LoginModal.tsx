@@ -23,8 +23,6 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
   const [message, setMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
-  const API = `${BACKEND_URL}/api`;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
