@@ -32,15 +32,36 @@ export async function POST(request: Request) {
       },
     });
 
-    const resetLink = `${process.env.NEXT_PUBLIC_BASE_URL}/reset-password?token=${token}`;
+    const resetLink = `${process.env.NEXT_PUBLIC_BACKEND_URL}/reset-password?token=${token}`;
 
     await transporter.sendMail({
-      from: '"Seu Portfólio" <seu-email@gmail.com>',
-      to: email,
-      subject: "Recuperação de Senha",
-      html: `<p>Você solicitou a troca de senha. Clique no link abaixo:</p>
-             <a href="${resetLink}">${resetLink}</a>
-             <p>Este link expira em 1 hora.</p>`,
+      from: '"Jayne Soraya | Portfólio" <jayne.soraya87@gmail.com>',
+  to: email,
+  subject: "🔐 Recuperação de Acesso",
+  html: `
+    <div style="font-family: sans-serif; background-color: #0a0a0a; color: #ffffff; padding: 40px; border-radius: 20px; max-width: 600px; margin: auto;">
+      <h2 style="color: #a855f7; text-align: center; font-size: 24px;">RECUPERAR_SENHA</h2>
+      <p style="color: #a3a3a3; text-align: center;">Olá! Recebemos uma solicitação para redefinir a senha da sua conta VIP.</p>
+      
+      <div style="text-align: center; margin: 30px 0;">
+        <a href="${resetLink}" 
+           style="background-color: #9333ea; color: #ffffff; padding: 15px 25px; border-radius: 10px; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">
+           Redefinir Minha Senha
+        </a>
+      </div>
+
+      <p style="color: #737373; font-size: 12px; text-align: center;">
+        Se você não solicitou esta alteração, ignore este e-mail.<br>
+        O link é válido por apenas <strong>1 hora</strong>.
+      </p>
+      
+      <hr style="border: 0; border-top: 1px solid #262626; margin: 20px 0;">
+      
+      <p style="color: #525252; font-size: 10px; text-align: center; text-transform: uppercase;">
+        Jayne Soraya • Software Engineer
+      </p>
+    </div>
+  `,
     });
 
     return NextResponse.json({ message: "E-mail enviado com sucesso!" });
