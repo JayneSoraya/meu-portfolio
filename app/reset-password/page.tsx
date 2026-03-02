@@ -30,9 +30,13 @@ const ResetPasswordForm = () => {
       setStatus('success');
       setMessage('Senha alterada com sucesso! Redirecionando...');
       setTimeout(() => router.push('/'), 3000);
-    } catch (err: any) {
+    } catch (err: unknown) {
       setStatus('error');
-      setMessage(err.response?.data?.error || 'Erro ao redefinir senha.');
+      if (axios.isAxiosError(err)){
+        setMessage(err.response?.data?.error || 'Erro ao redefinir senha.');
+      }else {
+        setMessage('Ocorreu um erro inesperado.');
+      }
     }
   };
 

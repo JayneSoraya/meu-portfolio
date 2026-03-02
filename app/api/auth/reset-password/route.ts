@@ -33,6 +33,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ message: "Senha atualizada com sucesso!" });
 
   } catch (error) {
+    console.error("Erro ao resetar senha:", error);
     return NextResponse.json({ error: "Erro interno" }, { status: 500 });
   }
 }
