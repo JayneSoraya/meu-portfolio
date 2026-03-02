@@ -41,7 +41,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
           window.location.href = '/vip';
         }, 1500);
       } else if (currentView === 'register') {
-        await axios.post('/auth/register', {
+        await axios.post('/api/auth/register', {
           name: formData.name,
           email: formData.email,
           password: formData.password
@@ -52,7 +52,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
           setMessage('');
         }, 2000);
       } else if (currentView === 'forgot-password') {
-        await axios.post('/auth/forgot-password', {
+        await axios.post('/api/auth/forgot-password', {
           email: formData.email
         });
         setCurrentView('reset-sent');
