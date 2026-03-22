@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h4 align = "center">
+    :construction: Projeto em construção :construction:
+</h4>
 
-## Getting Started
+# Meu portfólio
+ Um poquinho sobre mim
 
-First, run the development server:
+* [Título e Imagem de capa](#título-e-imagem-de-capa)
+* [Badges](#badges)
+* [índice](#índice)
+* [Descrição do Projeto](#descrição-do-projeto)
+* [Status do Projeto](#status-do-projeto)
+* [Funcionalidades e Demonstração da Aplicação](#funcionalidades-e-demonstração-da-aplicação)
+* [Acesso ao Projeto](#acesso-ao-projeto)
+* [Tecnologias utilizadas](#tecnologias-utilizadas)
+* [Pessoas Contribuidoras](#pessoas-contribuidoras)
+* [Pessoas Desenvolvedoras do Projeto](#pessoas-desenvolvedoras-do-projeto)
+* [Licença](#licença)
+* [Conclusão](#conclusão)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Título e Imagem de capa
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Portfólio
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<img src="https://i.imgur.com/CdJcH78.png" width="1080" height="1350" /> 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Badges
 
-## Learn More
+# Índice 
 
-To learn more about Next.js, take a look at the following resources:
+# Descrição do Projeto
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ 🛠️ Linguagens e Base: 
+ 
+ <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" width="40" height="40" /> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" width="40" height="40" /> 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🖼️ Front-end (Interface)
+Next.js; React; Tailwind CSS; Framer Motion; React; Axios;
 
-## Deploy on Vercel
+⚙️ Back-end (Servidor e API)
+Next.js; API Routes; Nodemailer; Bcryptjs; 
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+🗄️ Banco de Dados e Infraestrutura
+PostgreSQL; Neon; @neondatabase/serverless; Vercel; 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Segurança (Hash de senhas e Cookies)
+
+Banco de Dados (Consultas SQL e Relacionamentos)
+
+Comunicação (Envio de e-mails e integrações de API)
+
+UI/UX (Interface moderna e responsiva)
+ 
+# Status do Projeto
+
+ :construction: Projeto em construção :construction:
+ 
+# Funcionalidades e Demonstração da Aplicação
+
+# Acesso ao Projeto
+
+# Tecnologias utilizadas
+
+# Pessoas Contribuidoras
+
+# Pessoas Desenvolvedoras do Projeto
+
+# Licença
+
+# Conclusão
