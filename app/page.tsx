@@ -10,6 +10,8 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Skills from './components/Skills';
 import HardSkills from './components/HardSkills';
+import AcademicBackground from './components/AcademicBackground';
+import Certifications from './components/ Certifications';
 
 export default function Home() {
   return (
@@ -23,6 +25,8 @@ export default function Home() {
         <Skills />
         <HardSkills/>
         <Projects />
+        <AcademicBackground />
+        <Certifications />
         <ContactForm />
         <Contact />
       </main>

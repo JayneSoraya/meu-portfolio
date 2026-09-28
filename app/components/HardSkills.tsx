@@ -13,7 +13,7 @@ const HardSkills: React.FC = () => {
         viewport={{ once: true }}
         className="text-4xl md:text-5xl font-bold mb-12 tracking-tighter"
       >
-        <span className="text-purple-500">/ </span>HARD SKILLS_
+        <span className="text-purple-500">/ </span>SOFT SKILLS_
       </motion.h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

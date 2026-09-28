@@ -5,10 +5,10 @@ export const projects: Project[] = [
   {
     id: 1,
     title: "App PLPs",
-    description: "Criei o documento de requisitos das Promotoras Legais Populares (PLPs).",
+    description: "Qual problema o projeto resolve? Organização da sala de aula do coletivo bennu de acordo com suas necessidades. Criei o documento de requisitos das Promotoras Legais Populares (PLPs).",
     image: "/img/mulheresFelizes.jpg",
     url: "https://github.com/JayneSoraya/projeto-plp-araraquara",
-    tags: ["Full Stack", "UML", "Java"],
+    tags: ["Full Stack", "UML", "Java", "Spring Boot", "API REST"],
     category: "impactoSocial"
   },
   {
@@ -17,7 +17,7 @@ export const projects: Project[] = [
     description: "Automatizei o processo de IAM com JavaScript, validando prazos e gerando chamados.",
     image: "/img/logo-tembici.webp",
     url: "https://www.linkedin.com/posts/jayne-soraya_sempre-busco-um-jeito-de-inovar-para-os-clientes-activity-7288344763362168832-mMlM/?utm_source=share&utm_medium=member_desktop&rcm=ACoAACEhVZcB0j6ppdOhc_yT1YQRoSayumR8aNo",
-    tags: ["Jira", "Google Sheets", "JavaScript"],
+    tags: ["Jira", "Google Sheets", "JavaScript", "CrowdStrike", "Workspace"],
     category: "automacao" 
   },
   {
@@ -63,7 +63,7 @@ export const projects: Project[] = [
     title: "Artes",
     description: "Aplicando teoria, técnica e prática da publicidade e propaganda.",
     image: "/img/primeiraArte.webp",
-     url: "https://github.com/JayneSoraya/Empreenda-Senac",
+    url: "https://github.com/JayneSoraya/Empreenda-Senac",
     tags: ["React", "UI/UX", "Responsive"],
     category: "desenvolvimento"
   }
@@ -105,8 +105,8 @@ export const hardSkills: HardSkill[] = [
 
 export const aboutText: AboutText = {
   title: "SOBRE_MIM",
-  description: "Dev que entende de gente e de máquina. Atualmente graduanda em Análise e Desenvolvimento de Sistemas.",
-  detailedDescription: "Analista de Suporte e Infraestrutura com sólida experiência em diagnóstico de hardware, redes e software. Expertise em atendimento a chamados (N1/N2), sustentação de sistemas ERP e consultas em banco de dados (PL/SQL e OCI). Vivência em documentação técnica, automação de processos e testes em ambientes de homologação."
+  description: "Dev que entende de gente e de máquina.",
+  detailedDescription: "Analista de Suporte/Infraestrutura em transição para Engenharia de Software, com base em JavaScript,lógica de programação e bancos de dados relacionais, e experiência prática construindo automações e pequenas aplicações. Busco a posição de Engenheira de Software para aplicar esse conhecimento técnico no desenvolvimento de produtos."
 };
 
 export const socialLinks: SocialLink[] = [

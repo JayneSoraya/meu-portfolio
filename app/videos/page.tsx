@@ -44,7 +44,15 @@ export default function VideosPage() {
           <div className="aspect-video bg-black rounded-xl flex items-center justify-center relative overflow-hidden">
             <PlayCircle size={48} className="text-white/50 group-hover:text-purple-500 transition-all" />
           </div>
-          <p className="mt-4 text-neutral-400 text-sm">Aprenda os conceitos básicos de rotas no Next.js.</p>
+          <p className="mt-4 text-neutral-400 text-sm">Dominando as Rotas no Next.js (App Router) na Prática.</p>
+        </div>
+
+        <div className="bg-neutral-900/50 border border-white/5 p-6 rounded-2xl hover:border-purple-500/30 transition-all group">
+          <h2 className="text-xl font-bold mb-4">Aula 2: Next.js</h2>
+          <div className="aspect-video bg-black rounded-xl flex items-center justify-center relative overflow-hidden">
+            <PlayCircle size={48} className="text-white/50 group-hover:text-purple-500 transition-all" />
+          </div>
+          <p className="mt-4 text-neutral-400 text-sm">Estilização Profissional e Animações (Tailwind + Framer Motion).</p>
         </div>
       </div>
     </div>

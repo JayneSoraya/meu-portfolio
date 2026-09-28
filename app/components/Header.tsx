@@ -25,7 +25,9 @@ const Header: React.FC = () => {
     { name: 'Sobre', href: '#sobre' },
     { name: 'Projetos', href: '#portifolio' },
     { name: 'Serviços', href: '#servico' },
-    { name: 'Contato', href: '#contato' }
+    { name: 'Contato', href: '#contato' },
+    {name: 'Formação Acadêmica', href: '#formacao'},
+    {name: 'Certificações', href: '#certificacoes'}
   ];
 
   return (
@@ -43,7 +45,7 @@ const Header: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="relative text-white font-bold text-xl"
           >
-            JSSYSTEM
+           
           </motion.div>
 
           <ul className="hidden md:flex gap-8 text-xs uppercase tracking-widest font-medium items-center">
