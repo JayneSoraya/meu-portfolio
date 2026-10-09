@@ -9,6 +9,9 @@ export async function POST(request: Request) {
   try {
     const { email } = await request.json();
 
+    if (!email) {
+      return NextResponse.json({ error: "E-mail é obrigatório" }, { status: 400 });
+    }
     const users = await sql`SELECT id FROM users WHERE email = ${email}`;
     if (users.length === 0) {
       
@@ -16,7 +19,7 @@ export async function POST(request: Request) {
     }
 
     const token = crypto.randomBytes(32).toString("hex");
-    const expiry = new Date(Date.now() + 3600000); 
+    const expiry = new Date(Date.now() + 3600000).toISOString(); 
 
     await sql`
       UPDATE users 
@@ -33,7 +36,7 @@ export async function POST(request: Request) {
     });
 
     const resetLink = `${process.env.NEXT_PUBLIC_BACKEND_URL}/reset-password?token=${token}`;
-
+try{
     await transporter.sendMail({
       from: '"Jayne Soraya | Portfólio" <jayne.soraya87@gmail.com>',
   to: email,
@@ -63,7 +66,14 @@ export async function POST(request: Request) {
     </div>
   `,
     });
-
+  } catch (mailError) {
+    await sql`
+      UPDATE users 
+      SET reset_token = NULL, reset_token_expiry = NULL 
+      WHERE email = ${email}
+    `;
+    throw mailError;
+  }
     return NextResponse.json({ message: "E-mail enviado com sucesso!" });
 
   } catch (error) {
