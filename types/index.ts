@@ -1,11 +1,12 @@
 export interface Project {
   id: number;
   title: string;
+  impact: string;
   description: string;
   image: string;
   url: string;
   tags: string[];
-  category: 'desenvolvimento' | 'impactoSocial' | 'automacao';
+  category: 'desenvolvimento' | 'all' | 'impactoSocial' | 'automacao';
 }
 
 export interface Skill {

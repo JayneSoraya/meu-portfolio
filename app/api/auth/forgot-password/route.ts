@@ -2,11 +2,25 @@ import { NextResponse } from "next/server";
 import { neon } from "@neondatabase/serverless";
 import crypto from "crypto";
 import nodemailer from "nodemailer";
+import { forgotPasswordRatelimit } from "@/lib/ratelimit";
 
 const sql = neon(process.env.DATABASE_URL!);
 
 export async function POST(request: Request) {
   try {
+    const ip = request.headers.get("x-forwarded-for")?.split(",")[0] ?? "127.0.0.1";
+   
+    const {success, limit, remaining, reset} = await forgotPasswordRatelimit.limit(ip);
+    if (!success) {
+      return NextResponse.json(
+        { error: "Muitas solicitações. Tente novamente mais tarde." },
+        { status: 429, headers: {
+          "X-RateLimit-Limit": limit.toString(),
+          "X-RateLimit-Remaining": remaining.toString(),
+          "X-RateLimit-Reset": reset.toString(),
+         } }
+      );
+    }
     const { email } = await request.json();
 
     if (!email) {

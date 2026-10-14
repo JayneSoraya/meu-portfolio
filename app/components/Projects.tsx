@@ -126,11 +126,17 @@ const Projects: React.FC = () => {
               <h3 className="text-2xl font-bold group-hover:text-purple-500 transition-colors">
                 {project.title}
               </h3>
-              <p className="text-neutral-400 leading-relaxed">
+              {project.impact && (
+              <div className="inline-block px-3 py-1.5 rounded-lg bg-purple-950/60 border border-purple-500/40 text-purple-200 text-xs font-semibold tracking-wide shadow-sm">
+                 {project.impact}
+              </div>
+              )}
+
+              <p className="text-neutral-400 leading-relaxed text-sm">
                 {project.description}
               </p>
               
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 pt-2">
                 {project.tags.map((tag, i) => (
                   <span
                     key={i}
