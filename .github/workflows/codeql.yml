@@ -17,11 +17,22 @@ jobs:
       contents: read
       security-events: write
 
+    # Injeta os secrets globalmente para o job inteiro
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      UPSTASH_REDIS_REST_URL: ${{ secrets.UPSTASH_REDIS_REST_URL }}
+      UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
+      JWT_SECRET: ${{ secrets.JWT_SECRET }}
+      EMAIL_USER: ${{ secrets.EMAIL_USER }}
+      EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+      BLOB_READ_WRITE_TOKEN: ${{ secrets.BLOB_READ_WRITE_TOKEN }}
+      NEXT_PUBLIC_BACKEND_URL: ${{ secrets.NEXT_PUBLIC_BACKEND_URL }}
+
     strategy:
       fail-fast: false
       matrix:
         language: [ 'typescript' ]
-        
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -44,3 +55,5 @@ jobs:
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:${{ matrix.language }}"

@@ -101,7 +101,7 @@ Você pode clonar o repositório e rodar o projeto localmente:
 
 ```
 # Clone o repositório
-git clone https://github.com/SEU_USUARIO/meu-portfolio.git
+git clone https://github.com/JayneSoraya/meu-portfolio.git
 
 # Entre na pasta
 cd meu-portfolio
