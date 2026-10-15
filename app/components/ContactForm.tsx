@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { LazyMotion, domAnimation, m, AnimatePresence } from 'framer-motion';
 import { Send, CheckCircle, Paperclip, Plus, X, FileText } from 'lucide-react';
 import axios from 'axios';
 import type { ContactFormData } from '../../types';
@@ -91,26 +91,27 @@ const ContactForm: React.FC = () => {
   };
 
   return (
+    <LazyMotion features={domAnimation}>
     <section id="servico" className="py-24 bg-neutral-900/20 backdrop-blur-sm relative overflow-hidden">
-      <motion.div
+      <m.div
         className="absolute top-0 left-0 w-64 h-64 bg-purple-600/10 rounded-full blur-3xl"
         animate={{ x: [0, 100, 0], y: [0, 50, 0] }}
         transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
       />
       
       <div className="container mx-auto px-6 max-w-4xl relative z-10">
-        <motion.h2
+        <m.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-bold mb-12 text-center tracking-tighter"
         >
           <span className="text-purple-500">/ </span>VAMOS_CONVERSAR?
-        </motion.h2>
+        </m.h2>
 
         <AnimatePresence>
           {showSuccess && (
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: -50, scale: 0.8 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -50, scale: 0.8 }}
@@ -121,11 +122,11 @@ const ContactForm: React.FC = () => {
                 <h3 className="text-green-400 font-bold text-lg">E-mail enviado com sucesso!</h3>
                 <p className="text-green-300/80 text-sm">Aguarde que entrarei em contato em breve.</p>
               </div>
-            </motion.div>
+            </m.div>
           )}
         </AnimatePresence>
 
-        <motion.form
+        <m.form
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -134,17 +135,17 @@ const ContactForm: React.FC = () => {
           className="grid grid-cols-1 md:grid-cols-2 gap-8"
         >
           {/* Nome e Email (Mantidos iguais) */}
-          <motion.div whileFocus={{ scale: 1.02 }} className="relative">
+          <m.div whileFocus={{ scale: 1.02 }} className="relative">
             <input type="text" name="name" placeholder="NOME" value={formData.name} onChange={handleChange} required className="w-full bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-purple-600 transition-all text-white placeholder:text-neutral-500" />
-          </motion.div>
-          <motion.div whileFocus={{ scale: 1.02 }} className="relative">
+          </m.div>
+          <m.div whileFocus={{ scale: 1.02 }} className="relative">
             <input type="email" name="email" placeholder="EMAIL" value={formData.email} onChange={handleChange} required className="w-full bg-white/5 border border-white/10 rounded-lg p-4 outline-none focus:border-purple-600 transition-all text-white placeholder:text-neutral-500" />
-          </motion.div>
+          </m.div>
 
           {/* Mensagem */}
-          <motion.div whileFocus={{ scale: 1.02 }} className="md:col-span-2 relative">
+          <m.div whileFocus={{ scale: 1.02 }} className="md:col-span-2 relative">
             <textarea name="message" rows={6} placeholder="DESCREVA SEU PROJETO OU NECESSIDADE DE INFRAESTRUTURA" value={formData.message} onChange={handleChange} required className="w-full bg-white/5 border border-white/10 rounded-lg p-4 outline-none resize-none focus:border-purple-600 transition-all text-white placeholder:text-neutral-500" />
-          </motion.div>
+          </m.div>
 
           {/* ÁREA DE ANEXOS MÚLTIPLOS */}
           <div className="md:col-span-2 relative space-y-3">
@@ -160,7 +161,7 @@ const ContactForm: React.FC = () => {
             {/* Lista de Arquivos já selecionados */}
             <AnimatePresence>
               {files.map((file, index) => (
-                <motion.div
+                <m.div
                   key={`${file.name}-${index}`}
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
@@ -179,13 +180,13 @@ const ContactForm: React.FC = () => {
                   >
                     <X size={16} />
                   </button>
-                </motion.div>
+                </m.div>
               ))}
             </AnimatePresence>
 
             {/* Botão de Adicionar Mais (Esconde o input padrão) */}
             {currentTotalSize < MAX_TOTAL_SIZE && (
-              <motion.label
+              <m.label
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.99 }}
                 className="w-full flex items-center justify-center gap-2 bg-purple-600/10 border border-dashed border-purple-500/30 text-purple-400 rounded-lg p-4 cursor-pointer hover:bg-purple-600/20 hover:border-purple-500/50 transition-all text-sm font-medium uppercase tracking-wider"
@@ -198,17 +199,17 @@ const ContactForm: React.FC = () => {
                   accept=".pdf,.doc,.docx,.png,.jpg,.jpeg"
                   className="hidden"
                 />
-              </motion.label>
+              </m.label>
             )}
           </div>
 
           {error && (
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="md:col-span-2 text-red-400 text-sm text-center font-medium">
+            <m.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="md:col-span-2 text-red-400 text-sm text-center font-medium">
               {error}
-            </motion.p>
+            </m.p>
           )}
 
-          <motion.button
+          <m.button
             type="submit"
             disabled={isSubmitting || currentTotalSize > MAX_TOTAL_SIZE}
             whileHover={{ scale: 1.02 }}
@@ -216,14 +217,15 @@ const ContactForm: React.FC = () => {
             className="md:col-span-2 bg-purple-600 text-white font-bold py-4 rounded-xl hover:bg-purple-700 transition-all shadow-lg shadow-purple-600/20 uppercase tracking-widest flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSubmitting ? (
-              <><motion.div animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: 'linear' }} className="w-5 h-5 border-2 border-white border-t-transparent rounded-full" /> Enviando...</>
+              <><m.div animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: 'linear' }} className="w-5 h-5 border-2 border-white border-t-transparent rounded-full" /> Enviando...</>
             ) : (
               <><Send size={20} /> Enviar Proposta</>
             )}
-          </motion.button>
-        </motion.form>
+          </m.button>
+        </m.form>
       </div>
     </section>
+    </LazyMotion>
   );
 };
 

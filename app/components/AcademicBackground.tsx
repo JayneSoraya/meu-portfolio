@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { LazyMotion, domAnimation, m } from 'framer-motion';
 
 interface EducationItem {
   institution: string;
@@ -57,8 +57,9 @@ const academicData: EducationItem[] = [
 
 const AcademicBackground: React.FC = () => {
   return (
-    <section id="formacao" className="py-24 container mx-auto px-6">
-      <motion.div
+    <LazyMotion features={domAnimation}>
+      <section id="formacao" className="py-24 container mx-auto px-6">
+      <m.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -66,12 +67,12 @@ const AcademicBackground: React.FC = () => {
         className="max-w-4xl mx-auto space-y-12"
       >
         <div className="space-y-4 text-left">
-          <motion.h2 className="text-4xl md:text-5xl font-bold tracking-tighter">
+          <m.h2 className="text-4xl md:text-5xl font-bold tracking-tighter">
             <span className="text-purple-500">/ </span>
             Formação Acadêmica
-          </motion.h2>
+          </m.h2>
 
-          <motion.div
+          <m.div
             initial={{ width: 0 }}
             whileInView={{ width: '100%' }}
             viewport={{ once: true }}
@@ -82,7 +83,7 @@ const AcademicBackground: React.FC = () => {
 
         <div className="grid grid-cols-1 gap-6">
           {academicData.map((item, index) => (
-            <motion.div
+            <m.div
               key={index}
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -131,11 +132,12 @@ const AcademicBackground: React.FC = () => {
                   </p>
                 )}
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </div>
-      </motion.div>
+      </m.div>
     </section>
+    </LazyMotion>
   );
 };
 

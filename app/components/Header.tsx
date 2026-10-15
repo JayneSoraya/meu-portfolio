@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { LazyMotion, domAnimation, m } from 'framer-motion';
 import { Menu, X, Download } from 'lucide-react';
 import LoginModal from './LoginModal';
 import Link from 'next/link';
@@ -32,25 +32,26 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <motion.header
+    <LazyMotion features={domAnimation}>
+      <m.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: 'easeOut' }}
         className="fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/5"
       >
         <nav className="flex justify-between items-center p-6 container mx-auto">
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
             className="relative text-white font-bold text-xl"
           >
            
-          </motion.div>
+          </m.div>
 
           <ul className="hidden md:flex gap-8 text-xs uppercase tracking-widest font-medium items-center">
             {menuItems.map((item, index) => (
-              <motion.li
+              <m.li
                 key={item.name}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -62,9 +63,9 @@ const Header: React.FC = () => {
                 >
                   {item.name}
                 </Link>
-              </motion.li>
+              </m.li>
             ))}
-            <motion.li
+            <m.li
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
@@ -76,8 +77,8 @@ const Header: React.FC = () => {
                 <Download size={16} />
                 CURRÍCULO
               </button>
-            </motion.li>
-            <motion.li
+            </m.li>
+            <m.li
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
@@ -88,7 +89,7 @@ const Header: React.FC = () => {
               >
                 ÁREA VIP
               </button>
-            </motion.li>
+            </m.li>
           </ul>
 
           <button
@@ -100,7 +101,7 @@ const Header: React.FC = () => {
         </nav>
 
         {isMenuOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -142,12 +143,14 @@ const Header: React.FC = () => {
                 </button>
               </li>
             </ul>
-          </motion.div>
+          </m.div>
         )}
-      </motion.header>
+      </m.header>
 
       <LoginModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+        </LazyMotion>
     </>
+    
   );
 };
 

@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { LazyMotion, domAnimation, m } from 'framer-motion';
 
 interface CertificationItem {
   title: string;
@@ -93,8 +93,9 @@ const certificationsData: CertificationItem[] = [
 
 const Certifications: React.FC = () => {
   return (
+    <LazyMotion features={domAnimation}>
     <section id="certificacoes" className="py-24 container mx-auto px-6">
-      <motion.div
+      <m.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -102,12 +103,12 @@ const Certifications: React.FC = () => {
         className="max-w-4xl mx-auto space-y-12"
       >
         <div className="space-y-4 text-left">
-          <motion.h2 className="text-4xl md:text-5xl font-bold tracking-tighter">
+          <m.h2 className="text-4xl md:text-5xl font-bold tracking-tighter">
             <span className="text-purple-500">/ </span>
             Licenças e Certificados
-          </motion.h2>
+          </m.h2>
 
-          <motion.div
+          <m.div
             initial={{ width: 0 }}
             whileInView={{ width: '100%' }}
             viewport={{ once: true }}
@@ -118,7 +119,7 @@ const Certifications: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {certificationsData.map((item, index) => (
-            <motion.div
+            <m.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -186,11 +187,12 @@ const Certifications: React.FC = () => {
                   )}
                 </div>
               )}
-            </motion.div>
+            </m.div>
           ))}
         </div>
-      </motion.div>
+      </m.div>
     </section>
+    </LazyMotion>
   );
 };
 

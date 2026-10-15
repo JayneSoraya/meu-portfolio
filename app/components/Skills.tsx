@@ -1,24 +1,25 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m, LazyMotion, domAnimation } from 'framer-motion';
 import { skills } from '../../lib/data';
 
 const Skills: React.FC = () => {
   return (
+    <LazyMotion features={domAnimation}>
     <section className="py-20 container mx-auto px-6">
-      <motion.h2
+      <m.h2
         initial={{ opacity: 0, x: -50 }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true }}
         className="text-4xl md:text-5xl font-bold mb-12 tracking-tighter"
       >
         <span className="text-purple-500">/ </span>HARD SKILLS_
-      </motion.h2>
+      </m.h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {skills.map((skill, index) => (
-          <motion.div
+          <m.div
             key={skill.name}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -33,7 +34,7 @@ const Skills: React.FC = () => {
             
             {/* Barra de Progresso */}
             <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
-              <motion.div
+              <m.div
                 initial={{ width: 0 }}
                 whileInView={{ width: `${skill.level}%` }}
                 viewport={{ once: true }}
@@ -41,10 +42,11 @@ const Skills: React.FC = () => {
                 className="h-full bg-purple-600 rounded-full"
               />
             </div>
-          </motion.div>
+          </m.div>
         ))}
       </div>
     </section>
+    </LazyMotion>
   );
 };
 

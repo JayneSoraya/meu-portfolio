@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { m, domAnimation, LazyMotion } from 'framer-motion';
 import { useRouter } from 'next/navigation'; 
 import { Play, LogOut } from 'lucide-react';
 
@@ -26,10 +26,11 @@ export default function VipPage() {
   }
 
   return (
+    <LazyMotion features={domAnimation}>
     <div className="min-h-screen bg-neutral-950 text-white flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black" />
 
-      <motion.div
+      <m.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
@@ -69,7 +70,8 @@ export default function VipPage() {
             Sair
           </button>
         </div>
-      </motion.div>
+      </m.div>
     </div>
+    </LazyMotion>
   );
 }

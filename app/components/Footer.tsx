@@ -1,14 +1,15 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { LazyMotion, domAnimation, m } from 'framer-motion';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
+    <LazyMotion features={domAnimation}>
     <footer className="py-12 text-center text-neutral-600 text-xs font-mono uppercase border-t border-white/5 relative overflow-hidden">
-      <motion.div
+      <m.div
         className="absolute top-0 left-0 h-[2px] bg-gradient-to-r from-transparent via-purple-600 to-transparent"
         animate={{
           x: ['-100%', '100%']
@@ -22,7 +23,7 @@ const Footer: React.FC = () => {
       />
 
       <div className="space-y-2 relative z-10">
-        <motion.p
+        <m.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -43,8 +44,8 @@ const Footer: React.FC = () => {
               <path d="M386.9 258.4L386.9 359.8L358.6 359.8L358.6 480.3L281.5 480.3L281.5 359.9L253.2 359.9L253.2 258.4C253.2 254 254.8 250.2 257.8 247.1C260.9 244 264.7 242.4 269.1 242.4L371 242.4C375.1 242.4 378.8 244 382.1 247.1C385.2 250.3 386.9 254 386.9 258.4zM354.4 193.9C354.6 213 339.4 228.6 320.3 228.8C301.2 229 285.6 213.8 285.4 194.7C285.2 175.6 300.4 160 319.5 159.8C338.6 159.6 354.2 174.8 354.4 193.9zM319.6 72C461.4 72 568 182.1 568 320C568 467.1 449.5 568 319.6 568C185.6 568 72 458.5 72 320C72 187.1 176.7 72 319.6 72zM320.4 116.7C202.2 116.7 116.7 214.6 116.7 320C116.7 429.8 207.9 522.8 320.4 522.8C423.6 522.8 523.2 441.7 523.2 320C523.3 206.2 433 116.7 320.4 116.7z"/>
           </svg>
            Commons Attribution 4.0 International license {currentYear}.
-          </motion.p>
-        <motion.div
+          </m.p>
+        <m.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -52,9 +53,10 @@ const Footer: React.FC = () => {
           className="text-neutral-400"
         >
           Construído com <span className="text-red-500">♥</span> por <span className="text-purple-500">Jayne Soraya</span>
-        </motion.div>
+        </m.div>
       </div>
     </footer>
+    </LazyMotion>
   );
 };
 

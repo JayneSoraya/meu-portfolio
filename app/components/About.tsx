@@ -1,22 +1,23 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
+import { LazyMotion, domAnimation, m } from 'framer-motion';
 import Image from 'next/image';
 import { aboutText } from '../../lib/data';
 
 const About: React.FC = () => {
   return (
-    <section id="sobre" className="py-24 container mx-auto px-6">
+    <LazyMotion features={domAnimation}>
+      <section id="sobre" className="py-24 container mx-auto px-6">
       <div className="flex flex-col md:flex-row items-center gap-16 justify-center">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, scale: 0.9, rotateY: -30 }}
           whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
           className="relative"
         >
-          <motion.div
+          <m.div
             whileHover={{ scale: 1.05, rotateY: 5 }}
             transition={{ duration: 0.5 }}
             className="relative"
@@ -37,48 +38,49 @@ const About: React.FC = () => {
             </div>
 
             {/* Orbiting particles adaptadas para o formato quadrado */}
-            <motion.div
+            <m.div
               className="absolute -inset-4 rounded-3xl border border-purple-600/20"
               animate={{ rotate: 360 }}
               transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
             >
               <div className="absolute top-0 left-0 w-2 h-2 bg-purple-600 rounded-full" />
-            </motion.div>
-          </motion.div>
-        </motion.div>
+            </m.div>
+          </m.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-xl space-y-6 text-left"
         >
-          <motion.h2
+          <m.h2
             className="text-4xl md:text-5xl font-bold tracking-tighter"
           >
             <span className="text-purple-500">/ </span>
             {aboutText.title}
-          </motion.h2>
+          </m.h2>
 
-          <motion.p className="text-neutral-400 text-lg leading-relaxed">
+          <m.p className="text-neutral-400 text-lg leading-relaxed">
             {aboutText.description}
-          </motion.p>
+          </m.p>
 
-          <motion.p className="text-neutral-400 text-lg leading-relaxed italic border-l-4 border-purple-600 pl-4">
+          <m.p className="text-neutral-400 text-lg leading-relaxed italic border-l-4 border-purple-600 pl-4">
             {aboutText.detailedDescription}
-          </motion.p>
+          </m.p>
 
-          <motion.div
+          <m.div
             initial={{ width: 0 }}
             whileInView={{ width: '100%' }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.5 }}
             className="h-[2px] bg-gradient-to-r from-purple-600 to-transparent"
           />
-        </motion.div>
+        </m.div>
       </div>
     </section>
+    </LazyMotion>
   );
 };
 

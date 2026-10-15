@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion, Variants } from 'framer-motion';
+import { LazyMotion, domAnimation,  m, Variants } from 'framer-motion';
 import { projects } from '../../lib/data';
 import { ExternalLink } from 'lucide-react';
 import type { Project } from '../../types';
@@ -46,24 +46,25 @@ const Projects: React.FC = () => {
   };
 
   return (
+    <LazyMotion features={domAnimation}>
     <section id="portifolio" className="py-32 container mx-auto px-6">
-      <motion.h2
+      <m.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         className="text-5xl md:text-6xl font-bold mb-8 tracking-tighter"
       >
         <span className="text-purple-500">/ </span>PROJETOS_
-      </motion.h2>
+      </m.h2>
 
-      <motion.div
+      <m.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         className="flex flex-wrap gap-4 mb-16"
       >
         {categories.map((category) => (
-          <motion.button
+          <m.button
             key={category}
             onClick={() => setFilter(category)}
             whileHover={{ scale: 1.05 }}
@@ -75,11 +76,11 @@ const Projects: React.FC = () => {
             }`}
           >
             {categoryLabels[category]}
-          </motion.button>
+          </m.button>
         ))}
-      </motion.div>
+      </m.div>
 
-      <motion.div
+      <m.div
       key={filter}
         variants={containerVariants}
         initial="hidden"
@@ -88,7 +89,7 @@ const Projects: React.FC = () => {
         className="grid grid-cols-1 md:grid-cols-2 gap-8"
       >
         {filteredProjects.map((project: Project) => (
-          <motion.div
+          <m.div
             key={project.id}
             variants={itemVariants}
             className="group relative overflow-hidden bg-neutral-900/50 backdrop-blur-sm rounded-2xl border border-white/5 shadow-xl hover:shadow-purple-500/20 transition-all duration-500"
@@ -104,7 +105,7 @@ const Projects: React.FC = () => {
               
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
-              <motion.div
+              <m.div
                 initial={{ opacity: 0, y: 20 }}
                 whileHover={{ opacity: 1, y: 0 }}
                 className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500"
@@ -119,7 +120,7 @@ const Projects: React.FC = () => {
                     <ExternalLink size={24} />
                   </a>
                 </div>
-              </motion.div>
+              </m.div>
             </div>
 
             <div className="p-6 space-y-4">
@@ -148,7 +149,7 @@ const Projects: React.FC = () => {
               </div>
             </div>
 
-            <motion.div
+            <m.div
               className="absolute top-0 right-0 w-20 h-20 bg-purple-600/10"
               style={{
                 clipPath: 'polygon(100% 0, 0 0, 100% 100%)'
@@ -156,10 +157,11 @@ const Projects: React.FC = () => {
               initial={{ opacity: 0 }}
               whileHover={{ opacity: 1 }}
             />
-          </motion.div>
+          </m.div>
         ))}
-      </motion.div>
+      </m.div>
     </section>
+    </LazyMotion>
   );
 };
 

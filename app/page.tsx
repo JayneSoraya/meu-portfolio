@@ -1,6 +1,6 @@
 'use client';
 
-import SpaceBackground from './components/SpaceBackground';
+import dynamic from 'next/dynamic';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -11,7 +11,14 @@ import Footer from './components/Footer';
 import Skills from './components/Skills';
 import HardSkills from './components/HardSkills';
 import AcademicBackground from './components/AcademicBackground';
-import Certifications from './components/ Certifications';
+import Certifications from './components/Certifications';
+
+const SpaceBackground = dynamic(
+  () => import('@/app/components/SpaceBackground'),
+  {
+    ssr: false, // Desativa SSR para componentes visuais/canvas pesados
+  }
+);
 
 export default function Home() {
   return (

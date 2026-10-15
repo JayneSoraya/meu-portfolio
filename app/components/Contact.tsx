@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { LazyMotion, domAnimation, m, useMotionValue, useSpring } from 'framer-motion';
 import { Github, Linkedin, Mail, Phone } from 'lucide-react';
 import { socialLinks } from '../../lib/data';
 import type { SocialLink } from '../../types';
@@ -38,29 +38,30 @@ const Contact: React.FC = () => {
   };
 
   return (
+    <LazyMotion features={domAnimation}>
     <section 
       id="contato" 
       className="py-32 text-center relative overflow-hidden"
       ref={containerRef}
       onMouseMove={handleMouseMove}
     >
-      <motion.div
+      <m.div
         className="absolute inset-0 pointer-events-none opacity-40"
         style={{
           background: `radial-gradient(600px circle at ${lightX.get()}px ${lightY.get()}px, rgba(147, 51, 234, 0.3), transparent 70%)`
         }}
       />
 
-      <motion.h2
+      <m.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         className="text-4xl md:text-5xl font-bold mb-16 tracking-tighter uppercase relative z-10"
       >
         <span className="text-purple-500">/ </span>CONTATO_
-      </motion.h2>
+      </m.h2>
 
-      <motion.div
+      <m.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
@@ -70,7 +71,7 @@ const Contact: React.FC = () => {
         {socialLinks.map((link: SocialLink, index: number) => {
           const Icon = iconMap[link.icon];
           return (
-            <motion.a
+            <m.a
               key={link.name}
               href={link.url}
               target="_blank"
@@ -81,7 +82,7 @@ const Contact: React.FC = () => {
               transition={{ delay: index * 0.1 }}
               className="relative group"
             >
-              <motion.div 
+              <m.div 
                 className="text-4xl text-neutral-500 group-hover:text-purple-500 transition-colors relative z-10"
                 whileHover={{
                   rotate: [-2, 2, -2, 2, 0],
@@ -94,9 +95,9 @@ const Contact: React.FC = () => {
                 }}
               >
                 <Icon size={48} />
-              </motion.div>
+              </m.div>
               
-              <motion.div
+              <m.div
                 className="absolute inset-0 text-4xl text-red-500 opacity-0 group-hover:opacity-60 -z-10"
                 animate={{
                   x: [-3, 3, -2, 3, 0],
@@ -109,9 +110,8 @@ const Contact: React.FC = () => {
                 }}
               >
                 <Icon size={48} />
-              </motion.div>
-              
-              <motion.div
+              </m.div>
+              <m.div
                 className="absolute inset-0 text-4xl text-cyan-400 opacity-0 group-hover:opacity-60 -z-10"
                 animate={{
                   x: [3, -3, 3, -2, 0],
@@ -125,9 +125,9 @@ const Contact: React.FC = () => {
                 }}
               >
                 <Icon size={48} />
-              </motion.div>
+              </m.div>
 
-              <motion.div
+              <m.div
                 className="absolute inset-0 bg-purple-600/30 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-20"
                 animate={{
                   scale: [1, 1.2, 1],
@@ -140,18 +140,19 @@ const Contact: React.FC = () => {
                 }}
               />
 
-              <motion.span
+              <m.span
                 initial={{ opacity: 0, y: 10 }}
                 whileHover={{ opacity: 1, y: 0 }}
                 className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs text-neutral-400 whitespace-nowrap"
               >
                 {link.name}
-              </motion.span>
-            </motion.a>
+              </m.span>
+            </m.a>
           );
         })}
-      </motion.div>
+      </m.div>
     </section>
+    </LazyMotion>
   );
 };
 

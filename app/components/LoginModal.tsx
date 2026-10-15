@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { motion } from 'framer-motion'; 
+import { m, LazyMotion, domAnimation } from 'framer-motion'; 
 import { X, Mail, Lock, User, ArrowLeft } from 'lucide-react';
 import axios from 'axios';
 import type { AuthFormData } from '../../types';
@@ -88,14 +88,15 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <motion.div
+    <LazyMotion features={domAnimation}>
+    <m.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-xl"
       onClick={onClose}
     >
-      <motion.div
+      <m.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.9, opacity: 0 }}
@@ -125,7 +126,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
 
         <div className="relative z-10">
           {currentView === 'reset-sent' ? (
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-center space-y-6"
@@ -148,7 +149,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
               >
                 Voltar ao Login
               </button>
-            </motion.div>
+            </m.div>
           ) : (
             <>
               <h2 className="text-3xl font-bold mb-8 text-center text-purple-500 uppercase tracking-tighter">
@@ -226,13 +227,13 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
               </form>
 
               {message && (
-                <motion.p
+                <m.p
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                   className={`mt-4 text-center text-sm ${message.includes('sucesso') ? 'text-green-400' : 'text-red-400'}`}
                 >
                   {message}
-                </motion.p>
+                </m.p>
               )}
 
               {currentView === 'login' && (
@@ -255,8 +256,9 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
             </>
           )}
         </div>
-      </motion.div>
-    </motion.div>
+      </m.div>
+      </m.div>
+    </LazyMotion>
   );
 };
 
