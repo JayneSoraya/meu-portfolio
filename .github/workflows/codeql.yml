@@ -1,4 +1,4 @@
-name: "CodeQL Security Analysis"
+name: "CodeQL"
 
 on:
   push:
@@ -20,33 +20,33 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'javascript' ] 
+        language: [ 'javascript' ]
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    # 1. Inicializa o CodeQL
-    - name: Initialize CodeQL
-      uses: github/codeql-action/init@v3
-      with:
-        languages: ${{ matrix:language }}
+      # 1. Inicializa o CodeQL
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
 
-    # 2. Configura o Node.js para compilar o projeto Next.js
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-        cache: 'npm'
+      # 2. Configura o Node.js para compilar o projeto Next.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
 
-    # 3. Instala dependências e faz o build (fundamental para o Next.js analisar rotas e Server Actions)
-    - name: Install dependencies and build Next.js
-      run: |
-        npm ci
-        npm run build
+      # 3. Instala dependências e faz o build (fundamental para o Next.js analisar rotas e Server Actions)
+      - name: Install dependencies and build Next.js
+        run: |
+          npm ci
+          npm run build
 
-    # 4. Executa a análise de segurança
-    - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v3
-      with:
-        category: "/language:${{ matrix:language }}"
+      # 4. Executa a análise de segurança
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:${{ matrix.language }}"
