@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
-import { neon } from "@neondatabase/serverless";
+import { sql } from '@/lib/db';
 import bcrypt from "bcryptjs";
-
-const sql = neon(process.env.DATABASE_URL!);
 
 // Função feita para cumprir os requisitos de segurança da senha, como mínimo de caracteres, números, letras maiúsculas e minúsculas, e caracteres especiais.
 function isPasswordStrong(password: string): boolean {

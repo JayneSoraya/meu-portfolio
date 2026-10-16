@@ -20,7 +20,7 @@
 * [Conclusão](#conclusão)
 
 # Título e Imagem de capa
-Portfólio / Sistema Full-Stack de Autenticação e Gestão
+Portfólio / Sistema Full-Stack
 
 <img src="https://i.imgur.com/CdJcH78.png" width="1080" height="1350" /> 
 
@@ -92,7 +92,10 @@ O projeto adota uma estratégia de **Defesa em Profundidade (Defense in Depth)**
 - **Recuperação de Senha por Token:** Geração de token criptografado com validade de 1 hora e envio de e-mails transacionais via Nodemailer.
 - **Proteção contra Brute Force:** Limitação de requisições por IP nas rotas sensíveis utilizando Redis (retornando HTTP 429 quando excedido).
 - **Rotas Privadas Protegidas:** Redirecionamento e controle de acesso via Middleware no Next.js.
-
+- **print da aba Security**
+  <p align="center">
+  <img src="./public/img/codeScanning.webp" alt="Sec e QA" width="600" />
+</p> 
 ---
 
 # Acesso ao Projeto
